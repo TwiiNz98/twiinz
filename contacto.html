@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TwiiNz Studio — Contacto. Respondo en menos de 24h por WhatsApp. Primera consulta sin costo." />
+  <meta property="og:title" content="Contacto — TwiiNz Studio" />
+  <title>Contacto — TwiiNz Studio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <link rel="stylesheet" href="/assets/css/tokens.css" />
+  <link rel="stylesheet" href="/assets/css/base.css" />
+  <link rel="stylesheet" href="/assets/css/layout.css" />
+  <link rel="stylesheet" href="/assets/css/components.css" />
+  <link rel="stylesheet" href="/assets/css/animations.css" />
+  <link rel="stylesheet" href="/assets/css/utilities.css" />
+</head>
+<body class="page-entering">
+  <div id="cursor-dot"></div><div id="cursor-ring"></div>
+  <div id="loader"><div class="loader-inner"><div class="loader-logo"><span class="loader-t">T</span><span class="loader-w">W</span><span class="loader-dots"><span></span><span></span><span></span></span></div><div class="loader-bar"><div class="loader-fill"></div></div><span class="loader-label">Preparando contacto_</span></div></div>
+
+  <div id="navbar-slot"></div>
+
+  <!-- Hero dark -->
+  <header class="hero-mini-dark">
+    <div class="container">
+      <span class="section-tag mono reveal">/ CONTACTO</span>
+      <h1 class="section-title reveal" style="font-size:clamp(2rem,6vw,4rem);margin-bottom:0.75rem;color:var(--text-light);">
+        Hablemos <span style="background:linear-gradient(135deg,#CCFF00,#88AA00);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">hoy</span>
+      </h1>
+      <p class="section-sub reveal" style="color:var(--muted-light);">La mejor forma de empezar es con una conversación directa. Sin formularios eternos, sin esperas.</p>
+    </div>
+  </header>
+
+  <!-- Contacto grid -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Info -->
+        <div class="contact-info reveal">
+          <span class="section-tag mono" style="color:var(--lime-on-light);display:block;margin-bottom:1rem;">/ CANALES DIRECTOS</span>
+          <h2 class="section-title" style="text-align:left;font-size:clamp(1.5rem,4vw,2.5rem);margin-bottom:1.5rem;">
+            Elige cómo <span class="gradient-text">conectamos</span>
+          </h2>
+          <p style="color:var(--text-secondary);margin-bottom:2rem;line-height:1.7;font-size:0.9rem;">
+            WhatsApp es el canal principal. Respondo en menos de 24h en horario laboral Chile.
+          </p>
+
+          <div class="contact-channels">
+            <a href="https://wa.me/56950147783?text=Hola!%20Vi%20tu%20portfolio%20y%20quiero%20hablar%20sobre%20mi%20proyecto"
+               class="channel-item" target="_blank" rel="noopener">
+              <div class="channel-icon lime"><i data-feather="message-circle"></i></div>
+              <div>
+                <strong>WhatsApp</strong>
+                <span>+56 9 5014 7783 — Canal principal</span>
+              </div>
+              <i data-feather="arrow-up-right" class="channel-arrow"></i>
+            </a>
+
+            <a href="https://instagram.com/twiinz_x" class="channel-item" target="_blank" rel="noopener">
+              <div class="channel-icon"><i data-feather="instagram"></i></div>
+              <div>
+                <strong>Instagram</strong>
+                <span>@twiinz_x — Portfolio visual</span>
+              </div>
+              <i data-feather="arrow-up-right" class="channel-arrow"></i>
+            </a>
+
+            <a href="mailto:joanromeroastorga98@gmail.com" class="channel-item">
+              <div class="channel-icon"><i data-feather="mail"></i></div>
+              <div>
+                <strong>Email</strong>
+                <span>joanromeroastorga98@gmail.com</span>
+              </div>
+              <i data-feather="arrow-up-right" class="channel-arrow"></i>
+            </a>
+
+            <div class="channel-item" style="cursor:default;">
+              <div class="channel-icon"><i data-feather="map-pin"></i></div>
+              <div>
+                <strong>Ubicación</strong>
+                <span>Padre Hurtado, Santiago — Remoto Global</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="response-badge">
+            <i data-feather="zap" style="width:14px;height:14px;"></i>
+            Respondo en menos de 24 horas
+          </div>
+        </div>
+
+        <!-- Formulario -->
+        <div class="contact-form-panel reveal" data-delay="150">
+          <h3 style="font-family:var(--font-display);font-weight:700;margin-bottom:1.5rem;font-size:1.1rem;color:var(--text-primary);">Envíame tu proyecto</h3>
+          <form id="contact-form" novalidate>
+            <div class="form-group">
+              <label class="form-label" for="nombre">Nombre completo *</label>
+              <input type="text" id="nombre" name="nombre" class="form-input" placeholder="Tu nombre" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="negocio">Tu negocio / rubro</label>
+              <input type="text" id="negocio" name="negocio" class="form-input" placeholder="Ej: Tienda de ropa, growshop..." />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="servicio">¿Qué necesitas?</label>
+              <select id="servicio" name="servicio" class="form-input form-select">
+                <option value="">Selecciona un servicio</option>
+                <option value="landing">Landing de Conversión ($149+)</option>
+                <option value="ecommerce">E-commerce SPA ($399+)</option>
+                <option value="sistema">Sistema Digital Completo ($899+)</option>
+                <option value="personalizado">Proyecto personalizado</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="mensaje">Cuéntame tu idea</label>
+              <textarea id="mensaje" name="mensaje" class="form-input form-textarea" rows="4" placeholder="¿Qué quieres lograr con este proyecto?"></textarea>
+            </div>
+            <button type="submit" class="btn btn-lime btn-full" id="submit-btn">
+              <span>Enviar mensaje</span>
+              <i data-feather="send"></i>
+            </button>
+            <p class="form-note mono">Tu mensaje llegará pre-armado directamente por WhatsApp.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-slot"></div>
+  <div id="fab-slot"></div>
+  <div id="cmd-slot"></div>
+
+  <script src="/assets/js/core/config.js"></script>
+  <script src="/assets/js/core/ui.js"></script>
+  <script src="/assets/js/core/animations.js"></script>
+  <script src="/assets/js/core/components.js"></script>
+  <script src="/assets/js/pages/contacto.js"></script>
+  <script src="/assets/js/core/page-init.js"></script>
+</body>
+</html>

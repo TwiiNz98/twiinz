@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TwiiNz Studio — Planes y precios de desarrollo web. Landing desde $149 USD, E-commerce desde $399 USD, Sistema Digital desde $899 USD." />
+  <meta property="og:title" content="Servicios — TwiiNz Studio" />
+  <title>Servicios — TwiiNz Studio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <link rel="stylesheet" href="/assets/css/tokens.css" />
+  <link rel="stylesheet" href="/assets/css/base.css" />
+  <link rel="stylesheet" href="/assets/css/layout.css" />
+  <link rel="stylesheet" href="/assets/css/components.css" />
+  <link rel="stylesheet" href="/assets/css/animations.css" />
+  <link rel="stylesheet" href="/assets/css/utilities.css" />
+  <link rel="stylesheet" href="/assets/css/pages/servicios.css" />
+</head>
+<body class="page-entering">
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo"><span class="loader-t">T</span><span class="loader-w">W</span><span class="loader-dots"><span></span><span></span><span></span></span></div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+      <span class="loader-label">Cargando servicios_</span>
+    </div>
+  </div>
+
+  <div id="navbar-slot"></div>
+
+  <!-- ══ HERO MINI ══ -->
+  <header class="hero-mini">
+    <div class="container">
+      <span class="section-tag mono reveal">/ SERVICIOS</span>
+      <h1 class="section-title reveal" style="font-size:clamp(2rem,6vw,4rem);margin-bottom:0.75rem;">
+        Elige tu <span class="gradient-text">nivel de potencia</span>
+      </h1>
+      <p class="section-sub reveal">Tres planes claros. Precio fijo antes de empezar. Sin sorpresas, sin letra chica.</p>
+    </div>
+  </header>
+
+  <!-- ══ TOGGLE USD/CLP ══ -->
+  <section class="section" style="padding-top:2rem;padding-bottom:0;">
+    <div class="container">
+      <div class="currency-toggle-wrap reveal">
+        <span class="currency-label active" id="label-usd">USD</span>
+        <div class="currency-toggle" id="currency-toggle" role="switch" aria-checked="false" tabindex="0" aria-label="Cambiar moneda">
+          <div class="toggle-knob"></div>
+        </div>
+        <span class="currency-label" id="label-clp">CLP</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PLANES ══ -->
+  <section class="section">
+    <div class="container">
+      <div class="services-grid">
+        <div class="service-card reveal" data-delay="0">
+          <div class="card-header">
+            <span class="card-tag">STARTER</span>
+            <div class="card-icon"><i data-feather="zap"></i></div>
+          </div>
+          <div class="card-price">
+            <span class="price-from">Desde</span>
+            <span class="price-amount">$149</span>
+            <span class="price-currency">USD</span>
+          </div>
+          <h3 class="card-title">Landing de Conversión</h3>
+          <p class="card-desc">Perfecta para lanzar un producto, servicio o captar leads con urgencia.</p>
+          <ul class="card-features">
+            <li><i data-feather="check"></i> 1 página de alto impacto</li>
+            <li><i data-feather="check"></i> Diseño mobile-first</li>
+            <li><i data-feather="check"></i> Formulario + WhatsApp link</li>
+            <li><i data-feather="check"></i> Entrega en 5 días hábiles</li>
+            <li><i data-feather="check"></i> 1 ronda de revisiones</li>
+            <li class="disabled"><i data-feather="x"></i> Panel de administración</li>
+            <li class="disabled"><i data-feather="x"></i> Sistema de pedidos</li>
+          </ul>
+          <a href="/contacto.html?plan=starter" class="btn btn-outline btn-full">Consultar ahora</a>
+        </div>
+
+        <div class="service-card featured reveal" data-delay="100">
+          <div class="card-popular">⚡ MÁS VENDIDO</div>
+          <div class="card-header">
+            <span class="card-tag">PRO</span>
+            <div class="card-icon"><i data-feather="cpu"></i></div>
+          </div>
+          <div class="card-price">
+            <span class="price-from">Desde</span>
+            <span class="price-amount">$399</span>
+            <span class="price-currency">USD</span>
+          </div>
+          <h3 class="card-title">E-commerce SPA Completa</h3>
+          <p class="card-desc">Tu tienda online con catálogo, pedidos vía WhatsApp y panel de gestión.</p>
+          <ul class="card-features">
+            <li><i data-feather="check"></i> SPA multi-sección</li>
+            <li><i data-feather="check"></i> Catálogo de productos</li>
+            <li><i data-feather="check"></i> Carrito + pedidos por WA</li>
+            <li><i data-feather="check"></i> Panel admin (CRUD)</li>
+            <li><i data-feather="check"></i> Entrega en 12 días hábiles</li>
+            <li><i data-feather="check"></i> 3 rondas de revisiones</li>
+            <li><i data-feather="check"></i> Hosting en Netlify incluido</li>
+          </ul>
+          <a href="/contacto.html?plan=pro" class="btn btn-lime btn-full">Quiero este plan</a>
+        </div>
+
+        <div class="service-card reveal" data-delay="200">
+          <div class="card-header">
+            <span class="card-tag">ELITE</span>
+            <div class="card-icon"><i data-feather="layers"></i></div>
+          </div>
+          <div class="card-price">
+            <span class="price-from">Desde</span>
+            <span class="price-amount">$899</span>
+            <span class="price-currency">USD</span>
+          </div>
+          <h3 class="card-title">Sistema Digital Completo</h3>
+          <p class="card-desc">Web + estrategia de contenido + automatización + soporte 60 días.</p>
+          <ul class="card-features">
+            <li><i data-feather="check"></i> Todo lo del plan Pro</li>
+            <li><i data-feather="check"></i> Estrategia de contenido IG</li>
+            <li><i data-feather="check"></i> Scripts de venta WhatsApp</li>
+            <li><i data-feather="check"></i> Firebase / base de datos</li>
+            <li><i data-feather="check"></i> Soporte 60 días incluido</li>
+            <li><i data-feather="check"></i> Dominio + SSL gestionado</li>
+            <li><i data-feather="check"></i> Onboarding + capacitación</li>
+          </ul>
+          <a href="/contacto.html?plan=elite" class="btn btn-outline btn-full">Consultar ahora</a>
+        </div>
+      </div>
+      <p class="services-note reveal"><i data-feather="info"></i> Proyectos personalizados disponibles — <a href="https://wa.me/56950147783?text=Tengo%20un%20proyecto%20personalizado" target="_blank" rel="noopener">conversemos</a>.</p>
+    </div>
+  </section>
+
+  <!-- ══ TABLA COMPARATIVA ══ -->
+  <section class="section comparison-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag mono">/ COMPARATIVA</span>
+        <h2 class="section-title">Todos los <span class="gradient-text">detalles</span></h2>
+      </div>
+      <p class="table-scroll-hint">← Desliza para ver la tabla →</p>
+      <div class="table-wrap reveal">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th style="text-align:left;">Característica</th>
+              <th>Starter</th>
+              <th class="featured-col">Pro ⚡</th>
+              <th>Elite</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Precio base USD</td><td class="val">$149</td><td class="val">$399</td><td class="val">$899</td></tr>
+            <tr><td>Páginas / secciones</td><td>1 página</td><td>Multi-sección</td><td>Multi-sección</td></tr>
+            <tr><td>Diseño mobile-first</td><td><i data-feather="check" class="check"></i></td><td><i data-feather="check" class="check"></i></td><td><i data-feather="check" class="check"></i></td></tr>
+            <tr><td>Formulario + WhatsApp</td><td><i data-feather="check" class="check"></i></td><td><i data-feather="check" class="check"></i></td><td><i data-feather="check" class="check"></i></td></tr>
+            <tr><td>Catálogo de productos</td><td><i data-feather="x" class="cross"></i></td><td><i data-feather="check" class="check"></i></td><td><i data-feather="check" class="check"></i></td></tr>
+            <tr><td>Panel admin (CRUD)</td><td><i data-feather="x" class="cross"></i></td><td><i data-feather="check" class="check"></i></td><td><i data-feather="check" class="check"></i></td></tr>
+            <tr><td>Hosting Netlify</td><td><i data-feather="x" class="cross"></i></td><td><i data-feather="check" class="check"></i></td><td><i data-feather="check" class="check"></i></td></tr>
+            <tr><td>Firebase / DB</td><td><i data-feather="x" class="cross"></i></td><td><i data-feather="x" class="cross"></i></td><td><i data-feather="check" class="check"></i></td></tr>
+            <tr><td>Estrategia IG</td><td><i data-feather="x" class="cross"></i></td><td><i data-feather="x" class="cross"></i></td><td><i data-feather="check" class="check"></i></td></tr>
+            <tr><td>Soporte post-entrega</td><td class="val">—</td><td class="val">—</td><td class="val">60 días</td></tr>
+            <tr><td>Rondas de revisión</td><td class="val">1</td><td class="val">3</td><td class="val">Ilimitadas</td></tr>
+            <tr><td>Plazo de entrega</td><td class="val">5 días</td><td class="val">12 días</td><td class="val">~4 semanas</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FAQ PRECIOS ══ -->
+  <section class="section dark-section">
+    <div class="container container-narrow">
+      <div class="section-header reveal">
+        <span class="section-tag mono" style="color:var(--lime);">/ PREGUNTAS DE PRECIOS</span>
+        <h2 class="section-title" style="color:var(--text-light);">Dudas <span style="background:linear-gradient(135deg,#CCFF00,#88AA00);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">frecuentes</span></h2>
+      </div>
+      <div class="faq-list" style="--surface:var(--zinc);--border-light:rgba(255,255,255,0.07);">
+        <div class="faq-item reveal" style="background:var(--zinc);border-color:rgba(255,255,255,0.07);">
+          <button class="faq-question" style="color:var(--text-light);">
+            <span>¿Puedo pagar en cuotas?</span><i data-feather="plus"></i>
+          </button>
+          <div class="faq-answer"><p style="color:var(--muted-light);">Sí. El modelo estándar es 50% al iniciar y 50% al entregar. Para proyectos Elite podemos coordinar 3 pagos.</p></div>
+        </div>
+        <div class="faq-item reveal" style="background:var(--zinc);border-color:rgba(255,255,255,0.07);">
+          <button class="faq-question" style="color:var(--text-light);">
+            <span>¿Aceptan pago en CLP?</span><i data-feather="plus"></i>
+          </button>
+          <div class="faq-answer"><p style="color:var(--muted-light);">Sí. Los precios están en USD como referencia, pero coordinamos el pago en pesos chilenos al tipo de cambio del día.</p></div>
+        </div>
+        <div class="faq-item reveal" style="background:var(--zinc);border-color:rgba(255,255,255,0.07);">
+          <button class="faq-question" style="color:var(--text-light);">
+            <span>¿Qué pasa si no me gusta el resultado?</span><i data-feather="plus"></i>
+          </button>
+          <div class="faq-answer"><p style="color:var(--muted-light);">Cada plan incluye rondas de revisión específicas. No empiezo a construir sin que hayas aprobado el diseño inicial.</p></div>
+        </div>
+        <div class="faq-item reveal" style="background:var(--zinc);border-color:rgba(255,255,255,0.07);">
+          <button class="faq-question" style="color:var(--text-light);">
+            <span>¿El precio incluye dominio y hosting?</span><i data-feather="plus"></i>
+          </button>
+          <div class="faq-answer"><p style="color:var(--muted-light);">El plan Pro incluye hosting en Netlify (gratis para proyectos estáticos). El dominio se gestiona por separado (~$12 USD/año). El plan Elite incluye gestión de dominio y SSL.</p></div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:2.5rem;" class="reveal">
+        <a href="https://wa.me/56950147783?text=Hola!%20Tengo%20preguntas%20sobre%20los%20servicios"
+           class="btn btn-lime btn-lg" target="_blank" rel="noopener">
+          <i data-feather="message-circle"></i> Preguntar por WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-slot"></div>
+  <div id="fab-slot"></div>
+  <div id="cmd-slot"></div>
+
+  <script src="/assets/js/core/config.js"></script>
+  <script src="/assets/js/core/ui.js"></script>
+  <script src="/assets/js/core/animations.js"></script>
+  <script src="/assets/js/core/components.js"></script>
+  <script src="/assets/js/pages/servicios.js"></script>
+  <script src="/assets/js/core/page-init.js"></script>
+</body>
+</html>

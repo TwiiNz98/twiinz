@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TwiiNz Studio — Desarrollo web de élite, e-commerce y sistemas digitales para negocios chilenos que quieren dominar su mercado." />
+  <meta property="og:title" content="TwiiNz Studio — Arquitectura Digital de Élite" />
+  <meta property="og:description" content="Transformo negocios en sistemas digitales de alto rendimiento." />
+  <meta property="og:type" content="website" />
+  <title>TwiiNz Studio — Arquitectura Digital de Élite</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <link rel="stylesheet" href="/assets/css/tokens.css" />
+  <link rel="stylesheet" href="/assets/css/base.css" />
+  <link rel="stylesheet" href="/assets/css/layout.css" />
+  <link rel="stylesheet" href="/assets/css/components.css" />
+  <link rel="stylesheet" href="/assets/css/animations.css" />
+  <link rel="stylesheet" href="/assets/css/utilities.css" />
+  <link rel="stylesheet" href="/assets/css/pages/home.css" />
+</head>
+<body class="page-entering">
+
+  <!-- Cursor -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- Loader -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">
+        <span class="loader-t">T</span><span class="loader-w">W</span>
+        <span class="loader-dots"><span></span><span></span><span></span></span>
+      </div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+      <span class="loader-label">Iniciando protocolo_</span>
+    </div>
+  </div>
+
+  <!-- Canvas (solo en home) -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Slots de componentes compartidos -->
+  <div id="navbar-slot"></div>
+
+  <!-- ══════════════ HERO ══════════════ -->
+  <section id="hero" class="section hero-section">
+    <div class="container">
+      <div class="avail-badge reveal">
+        <span class="badge-dot"></span>
+        Disponible para proyectos — Chile &amp; Remoto
+      </div>
+
+      <h1 class="hero-title reveal">
+        <span class="title-line">Sistemas digitales</span>
+        <span class="title-line gradient-text" id="typewriter-target" style="background:linear-gradient(135deg,#CCFF00,#88AA00);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">que generan ventas</span>
+      </h1>
+
+      <p class="hero-sub reveal">
+        No construyo sitios web bonitos. Construyo <strong>máquinas de conversión</strong>
+        que trabajan 24/7 para tu negocio — desde la primera visita hasta el pago.
+      </p>
+
+      <div class="hero-actions reveal">
+        <a href="/servicios.html" class="btn btn-lime btn-lg">
+          <span>Ver servicios</span>
+          <i data-feather="arrow-right"></i>
+        </a>
+        <a href="https://wa.me/56950147783?text=Hola!%20Quiero%20hablar%20sobre%20mi%20proyecto"
+           class="btn btn-outline-dark btn-lg" target="_blank" rel="noopener">
+          <i data-feather="message-circle"></i>
+          <span>WhatsApp directo</span>
+        </a>
+      </div>
+
+      <div class="hero-stats reveal" data-delay="150">
+        <div class="stat-item">
+          <span class="stat-number" data-target="40">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Proyectos entregados</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="100">0</span><span class="stat-pct">%</span>
+          <span class="stat-label">Clientes satisfechos</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="24">0</span><span class="stat-plus">h</span>
+          <span class="stat-label">Tiempo de respuesta</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="3">0</span><span class="stat-plus">x</span>
+          <span class="stat-label">ROI promedio reportado</span>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span class="mono">SCROLL</span>
+    </div>
+  </section>
+
+  <!-- ══════════════ STRIP ══════════════ -->
+  <div class="about-strip">
+    <div class="strip-track">
+      <span>Desarrollo Web ·</span><span>E-commerce ·</span><span>Estrategia Digital ·</span>
+      <span>WhatsApp Automation ·</span><span>UI/UX Diseño ·</span><span>SEO On-page ·</span>
+      <span>Sistemas de Venta ·</span><span>Desarrollo Web ·</span><span>E-commerce ·</span>
+      <span>Estrategia Digital ·</span><span>WhatsApp Automation ·</span><span>UI/UX Diseño ·</span>
+      <span>SEO On-page ·</span><span>Sistemas de Venta ·</span>
+    </div>
+  </div>
+
+  <!-- ══════════════ PROPUESTA DE VALOR ══════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag mono">/ POR QUÉ TWIINZ</span>
+        <h2 class="section-title">No es un sitio web.<br>Es un <span class="gradient-text">sistema</span>.</h2>
+      </div>
+      <div class="value-grid">
+        <div class="value-item reveal" data-delay="0">
+          <div class="value-icon"><i data-feather="cpu"></i></div>
+          <div class="value-title">Ingeniería, no diseño</div>
+          <div class="value-desc">Cada elemento tiene una función. Nada es decorativo sin propósito. El resultado convierte visitas en clientes.</div>
+        </div>
+        <div class="value-item reveal" data-delay="100">
+          <div class="value-icon"><i data-feather="trending-up"></i></div>
+          <div class="value-title">Inversión, no gasto</div>
+          <div class="value-desc">Un sistema digital que funciona las 24 horas genera retorno medible. El promedio de mis clientes reporta 3x ROI en 90 días.</div>
+        </div>
+        <div class="value-item reveal" data-delay="200">
+          <div class="value-icon"><i data-feather="shield"></i></div>
+          <div class="value-title">Código tuyo, siempre</div>
+          <div class="value-desc">Sin suscripciones, sin dependencias. Al entregar el proyecto, el repositorio es 100% tuyo. Sin letra chica.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ PREVIEW SERVICIOS ══════════════ -->
+  <section class="section section-surface">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag mono">/ SERVICIOS</span>
+        <h2 class="section-title">Elige tu <span class="gradient-text">nivel de potencia</span></h2>
+        <p class="section-sub">Tres planes claros. Precio fijo. Sin sorpresas. Precios en USD.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal" data-delay="0">
+          <div class="card-header">
+            <span class="card-tag">STARTER</span>
+            <div class="card-icon"><i data-feather="zap"></i></div>
+          </div>
+          <div class="card-price">
+            <span class="price-from">Desde</span>
+            <span class="price-amount">$149</span>
+            <span class="price-currency">USD</span>
+          </div>
+          <h3 class="card-title">Landing de Conversión</h3>
+          <p class="card-desc">1 página de alto impacto. Mobile-first. Entrega en 5 días hábiles.</p>
+          <a href="/servicios.html" class="btn btn-outline btn-full">Ver detalles →</a>
+        </div>
+
+        <div class="service-card featured reveal" data-delay="100">
+          <div class="card-popular">⚡ MÁS VENDIDO</div>
+          <div class="card-header">
+            <span class="card-tag">PRO</span>
+            <div class="card-icon"><i data-feather="cpu"></i></div>
+          </div>
+          <div class="card-price">
+            <span class="price-from">Desde</span>
+            <span class="price-amount">$399</span>
+            <span class="price-currency">USD</span>
+          </div>
+          <h3 class="card-title">E-commerce SPA Completa</h3>
+          <p class="card-desc">Catálogo, carrito, pedidos por WhatsApp y panel admin incluido.</p>
+          <a href="/contacto.html?plan=pro" class="btn btn-lime btn-full">Quiero este plan</a>
+        </div>
+
+        <div class="service-card reveal" data-delay="200">
+          <div class="card-header">
+            <span class="card-tag">ELITE</span>
+            <div class="card-icon"><i data-feather="layers"></i></div>
+          </div>
+          <div class="card-price">
+            <span class="price-from">Desde</span>
+            <span class="price-amount">$899</span>
+            <span class="price-currency">USD</span>
+          </div>
+          <h3 class="card-title">Sistema Digital Completo</h3>
+          <p class="card-desc">Web + estrategia + automatización + soporte 60 días.</p>
+          <a href="/servicios.html" class="btn btn-outline btn-full">Ver detalles →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ PROYECTOS DESTACADOS (dark) ══════════════ -->
+  <section class="section dark-section featured-projects">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag mono">/ PORTAFOLIO</span>
+        <h2 class="section-title" style="color:var(--text-light);">Trabajo <span style="background:linear-gradient(135deg,#CCFF00,#88AA00);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">real</span></h2>
+        <p class="section-sub">Proyectos construidos, entregados y funcionando en producción.</p>
+      </div>
+      <div class="portfolio-grid">
+        <div class="portfolio-item reveal" data-category="ecommerce">
+          <div class="portfolio-card">
+            <div class="portfolio-img" style="background:linear-gradient(135deg,#8B4513 0%,#D2691E 50%,#F4A460 100%);">
+              <div class="portfolio-overlay">
+                <span class="portfolio-type">E-commerce SPA</span>
+                <h3>Círculo de Sabores</h3>
+                <p>Tienda artesanal con catálogo, carrito y pedidos vía WhatsApp. 7 vistas, panel admin.</p>
+                <div class="portfolio-tech"><span>Vanilla JS</span><span>CSS3</span><span>WhatsApp API</span></div>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <h3>Círculo de Sabores</h3>
+              <span class="mono tag-ecommerce">E-commerce</span>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item reveal" data-category="sistema" data-delay="100">
+          <div class="portfolio-card">
+            <div class="portfolio-img" style="background:linear-gradient(135deg,#2d1b69 0%,#5c3317 50%,#c0392b 100%);">
+              <div class="portfolio-overlay">
+                <span class="portfolio-type">SaaS / Plataforma</span>
+                <h3>Joan Supply</h3>
+                <p>Plataforma de coaching y venta con auth JWT, Stripe-ready y sistema de reservas.</p>
+                <div class="portfolio-tech"><span>React</span><span>JWT</span><span>Stripe</span></div>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <h3>Joan Supply</h3>
+              <span class="mono tag-sistema">Sistema</span>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item reveal" data-category="landing" data-delay="200">
+          <div class="portfolio-card">
+            <div class="portfolio-img" style="background:linear-gradient(135deg,#004e92 0%,#000428 100%);">
+              <div class="portfolio-overlay">
+                <span class="portfolio-type">Sitio Web Corporativo</span>
+                <h3>Logística &amp; Mudanzas</h3>
+                <p>Web para empresa de mudanzas con animaciones, mapa OpenStreetMap y micro-interacciones.</p>
+                <div class="portfolio-tech"><span>HTML5</span><span>CSS3</span><span>OpenStreetMap</span></div>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <h3>Logística &amp; Mudanzas</h3>
+              <span class="mono tag-landing">Landing</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:2.5rem;" class="reveal">
+        <a href="/proyectos.html" class="btn btn-outline-dark btn-lg">Ver portafolio completo <i data-feather="arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ TESTIMONIOS ══════════════ -->
+  <section class="section section-surface">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag mono">/ TESTIMONIOS</span>
+        <h2 class="section-title">Lo que dicen <span class="gradient-text">mis clientes</span></h2>
+      </div>
+      <div class="testimonials-carousel reveal">
+        <div class="testimonials-track" id="testimonials-track">
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p>"Entregó la tienda en tiempo récord y con más funciones de las que pedí. El sistema de pedidos por WhatsApp funciona perfecto y mis clientes lo aman."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background:#D2691E;">CS</div>
+              <div><strong>Dueño de negocio</strong><span class="mono">Círculo de Sabores</span></div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p>"El growshop se ve profesional ahora. Antes solo teníamos Instagram. Ahora tenemos sitio web propio con catálogo y todo. Excelente trabajo y comunicación."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background:#1a5c1a;">PG</div>
+              <div><strong>Administrador</strong><span class="mono">Piña GrowShop</span></div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p>"Pensaba que un sistema así costaría una fortuna. TwiiNz lo hizo en menos de 2 semanas y dentro de mi presupuesto. Muy recomendado para emprendedores."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background:#5c1a5c;">JC</div>
+              <div><strong>Emprendedor</strong><span class="mono">J&amp;C Tienda</span></div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p>"No solo diseña, entiende tu negocio. Me ayudó con la estrategia y el sistema de ventas por WhatsApp. Subimos las ventas el primer mes."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background:#1a3a5c;">LM</div>
+              <div><strong>Fundadora</strong><span class="mono">Empresa de mudanzas</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-controls">
+          <button class="carousel-btn" id="prev-btn" aria-label="Anterior"><i data-feather="chevron-left"></i></button>
+          <div class="carousel-dots" id="carousel-dots"></div>
+          <button class="carousel-btn" id="next-btn" aria-label="Siguiente"><i data-feather="chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ CTA BAND ══════════════ -->
+  <section class="cta-band reveal">
+    <div class="container">
+      <div class="cta-content">
+        <span class="cta-tag mono">¿LISTO PARA EMPEZAR?</span>
+        <h2 class="cta-title">Tu negocio necesita <span class="gradient-text">un sistema</span>, no solo un sitio.</h2>
+        <p class="cta-sub">Respondo en menos de 24h. Primera consulta sin costo.</p>
+        <a href="https://wa.me/56950147783?text=Hola!%20Vi%20tu%20portfolio%20y%20quiero%20empezar%20mi%20proyecto%20digital"
+           class="btn btn-lime btn-lg btn-glow" target="_blank" rel="noopener">
+          <i data-feather="message-circle"></i>
+          <span>Iniciar por WhatsApp</span>
+          <i data-feather="arrow-up-right"></i>
+        </a>
+      </div>
+    </div>
+    <div class="cta-decoration"></div>
+  </section>
+
+  <!-- Footer y FAB slots -->
+  <div id="footer-slot"></div>
+  <div id="fab-slot"></div>
+  <div id="cmd-slot"></div>
+
+  <!-- Scripts -->
+  <script src="/assets/js/core/config.js"></script>
+  <script src="/assets/js/core/ui.js"></script>
+  <script src="/assets/js/core/animations.js"></script>
+  <script src="/assets/js/core/components.js"></script>
+  <script src="/assets/js/core/effects.js"></script>
+  <script src="/assets/js/pages/home.js"></script>
+  <script src="/assets/js/core/page-init.js"></script>
+</body>
+</html>
