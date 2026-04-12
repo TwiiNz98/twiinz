@@ -1,0 +1,72 @@
+/* ═══════════════════════════════════════════════════════
+   TWIINZ STUDIO — BASE.CSS — Reset + Tipografía global
+   ═══════════════════════════════════════════════════════ */
+
+/* ─── RESET ─── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html {
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+body {
+  font-family: var(--font-body);
+  background: var(--page-bg);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  cursor: auto;
+}
+img    { max-width: 100%; display: block; }
+a      { text-decoration: none; color: inherit; }
+button { cursor: pointer; border: none; background: none; font: inherit; }
+ul     { list-style: none; }
+input, textarea, select { font: inherit; font-size: 16px; border-radius: 0; }
+
+/* ─── PAGE TRANSITION ─── */
+body.page-entering {
+  opacity: 0;
+}
+body {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+body.page-exiting {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--page-bg); }
+::-webkit-scrollbar-thumb { background: var(--lime-on-light); border-radius: 2px; }
+
+/* ─── SELECTION ─── */
+::selection { background: var(--lime); color: var(--dark); }
+
+/* ─── TIPOGRAFÍA GLOBAL ─── */
+.mono {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--lime-on-light) 0%, #4a6000 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* gradient-text en fondos oscuros */
+.dark-bg .gradient-text,
+.dark-section .gradient-text,
+[data-theme="dark"] .gradient-text {
+  background: linear-gradient(135deg, var(--lime) 0%, var(--lime-dim) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── CURSOR CUSTOM ─── */
+#cursor-dot, #cursor-ring { display: none; }

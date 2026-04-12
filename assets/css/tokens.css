@@ -1,0 +1,59 @@
+/* ═══════════════════════════════════════════════════════
+   TWIINZ STUDIO — TOKENS.CSS — Design System v2.0 MPA
+   Fuente única de verdad para todos los tokens visuales
+   ═══════════════════════════════════════════════════════ */
+
+:root {
+  /* ─── FONDOS ─── */
+  --page-bg:           #F5F4F0;   /* Fondo 70% de la UI — warm white */
+  --surface:           #FFFFFF;   /* Cards, panels elevados, navbar scrolled */
+  --surface-secondary: #EEEDE9;   /* Fondo secundario en secciones claras */
+
+  /* ─── OSCUROS (uso estratégico — hero, footer, CTA band) ─── */
+  --dark:         #111111;
+  --dark-surface: #1A1A1A;
+  --mid:          #111111;
+  --zinc:         #1A1A1A;
+  --zinc2:        #222222;
+  --dark-border:  rgba(255,255,255,0.08);
+
+  /* ─── ACENTO ─── */
+  --lime:         #CCFF00;
+  --lime-dim:     #88AA00;
+  --lime-on-light:#7A9900;   /* Lime para usar sobre fondos claros (WCAG AA) */
+  --lime-glow:    rgba(204,255,0,0.15);
+
+  /* ─── TIPOGRAFÍA — fondos claros ─── */
+  --text-primary:   #1A1A1A;
+  --text-secondary: #5A5A5A;
+  --text-muted:     #8A8A8A;
+
+  /* ─── TIPOGRAFÍA — fondos oscuros ─── */
+  --text-light:  #F0F0F0;
+  --muted-light: #999999;
+  --muted:       #666666;
+
+  /* ─── BORDES ─── */
+  --border-light:  rgba(0,0,0,0.08);
+  --border-medium: rgba(0,0,0,0.15);
+  --border:        rgba(255,255,255,0.07); /* Alias para contextos oscuros */
+
+  /* ─── TIPOGRAFÍAS ─── */
+  --font-display: 'Syne', sans-serif;
+  --font-mono:    'Space Mono', monospace;
+  --font-body:    'Outfit', sans-serif;
+
+  /* ─── ESPACIADO ─── */
+  --section-py:   4rem;
+  --container-px: 1.125rem;
+  --nav-h:        64px;
+
+  /* ─── RADIOS ─── */
+  --radius:    16px;
+  --radius-sm: 10px;
+  --radius-lg: 24px;
+
+  /* ─── EASINGS ─── */
+  --ease-expo:   cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-smooth: cubic-bezier(0.76, 0, 0.24, 1);
+}

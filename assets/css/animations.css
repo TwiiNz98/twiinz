@@ -1,0 +1,72 @@
+/* ═══════════════════════════════════════════════════════
+   TWIINZ STUDIO — ANIMATIONS.CSS
+   ═══════════════════════════════════════════════════════ */
+
+/* ─── REVEAL ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s var(--ease-expo), transform 0.7s var(--ease-expo);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+[data-delay="50"]  { transition-delay: 0.05s; }
+[data-delay="100"] { transition-delay: 0.1s; }
+[data-delay="150"] { transition-delay: 0.15s; }
+[data-delay="200"] { transition-delay: 0.2s; }
+[data-delay="300"] { transition-delay: 0.3s; }
+[data-delay="450"] { transition-delay: 0.45s; }
+[data-delay="600"] { transition-delay: 0.6s; }
+
+/* ─── BADGE BLINK ─── */
+.badge-dot {
+  width: 7px; height: 7px; background: var(--lime); border-radius: 50%; flex-shrink: 0;
+  animation: badge-blink 2s ease-in-out infinite;
+}
+@keyframes badge-blink {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(204,255,0,0.4); }
+  50%       { opacity: 0.6; box-shadow: 0 0 0 5px rgba(204,255,0,0); }
+}
+
+/* ─── SCROLL INDICATOR ─── */
+.scroll-indicator { display: none; }
+
+@media (min-width: 640px) {
+  .scroll-indicator {
+    display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
+    position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); opacity: 0.4;
+  }
+  .scroll-line {
+    width: 1px; height: 44px;
+    background: linear-gradient(to bottom, var(--lime), transparent);
+    animation: scroll-line-anim 2s ease-in-out infinite;
+  }
+  .scroll-indicator .mono { font-size: 0.58rem; color: var(--muted-light); letter-spacing: 0.28em; }
+}
+
+@keyframes scroll-line-anim {
+  0%   { transform: scaleY(0); transform-origin: top; }
+  50%  { transform: scaleY(1); transform-origin: top; }
+  51%  { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* ─── TIMELINE LINE ─── */
+.timeline-line-reveal {
+  transform-origin: top;
+  transform: scaleY(0);
+  transition: transform 0.8s var(--ease-expo);
+}
+.timeline-line-reveal.visible { transform: scaleY(1); }
+
+/* Prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal, [data-delay] {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+  .badge-dot { animation: none; }
+  .strip-track { animation: none; }
+  body { transition: none; }
+  body.page-entering, body.page-exiting { opacity: 1; }
+}

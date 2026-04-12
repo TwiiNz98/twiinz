@@ -1,0 +1,97 @@
+/* ═══════════════════════════════════════════════════════
+   TWIINZ STUDIO — LAYOUT.CSS — Containers y Secciones
+   ═══════════════════════════════════════════════════════ */
+
+/* ─── CONTAINER ─── */
+.container        { max-width: 1200px; margin: 0 auto; padding: 0 var(--container-px); }
+.container-narrow { max-width: 760px; margin: 0 auto; padding: 0 var(--container-px); }
+
+/* ─── SECTION BASE ─── */
+.section {
+  padding: var(--section-py) 0;
+  position: relative;
+  z-index: 1;
+  background: var(--page-bg);
+}
+
+/* Sección sobre surface */
+.section-surface  { background: var(--surface); }
+.section-secondary { background: var(--surface-secondary); }
+
+/* Sección oscura */
+.dark-section, .dark-bg {
+  background: var(--dark);
+  color: var(--text-light);
+}
+.dark-section .section-sub,
+.dark-bg .section-sub { color: var(--muted-light); }
+.dark-section .section-tag,
+.dark-bg .section-tag  { color: var(--lime); }
+.dark-section .section-title,
+.dark-bg .section-title { color: var(--text-light); }
+
+/* ─── SECTION HEADER ─── */
+.section-header { text-align: center; margin-bottom: 2.5rem; }
+.section-tag {
+  display: inline-block;
+  color: var(--lime-on-light);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  margin-bottom: 0.75rem;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.75rem, 7vw, 3.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+.section-sub {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+/* ─── HERO MINI (páginas internas) ─── */
+.hero-mini {
+  padding: calc(var(--nav-h) + 3rem) 0 3rem;
+  background: var(--page-bg);
+  border-bottom: 1px solid var(--border-light);
+}
+.hero-mini .section-tag  { color: var(--lime-on-light); }
+.hero-mini .section-title { color: var(--text-primary); }
+
+/* Hero mini dark (contacto) */
+.hero-mini-dark {
+  padding: calc(var(--nav-h) + 3rem) 0 3rem;
+  background: var(--dark);
+  color: var(--text-light);
+}
+.hero-mini-dark .section-tag   { color: var(--lime); }
+.hero-mini-dark .section-title { color: var(--text-light); }
+.hero-mini-dark .section-sub   { color: var(--muted-light); }
+
+/* ─── RESPONSIVE ─── */
+@media (min-width: 640px) {
+  :root {
+    --section-py: 5rem;
+    --container-px: 1.5rem;
+    --nav-h: 72px;
+  }
+  .section-header { margin-bottom: 3rem; }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --section-py: 7rem;
+    --container-px: 2rem;
+    --nav-h: 80px;
+    --radius: 20px;
+    --radius-sm: 12px;
+    --radius-lg: 32px;
+  }
+  .section-header { margin-bottom: 4rem; }
+}

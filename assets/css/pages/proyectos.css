@@ -1,0 +1,10 @@
+/* ═══════════════════════════════════════════════════════
+   TWIINZ STUDIO — pages/proyectos.css
+   ═══════════════════════════════════════════════════════ */
+
+/* Filter bar sticky en proyectos */
+.filter-sticky {
+  position: sticky; top: var(--nav-h); z-index: 50;
+  background: var(--page-bg); padding: 1rem 0;
+  border-bottom: 1px solid var(--border-light);
+}
