@@ -46,6 +46,14 @@
   <!-- Slots de componentes compartidos -->
   <div id="navbar-slot"></div>
 
+  <!-- Popup de clicks para proyectos -->
+  <div id="click-popup" class="click-popup" hidden>
+    <div class="click-popup-inner">
+      <span class="click-popup-count">1</span>
+      <span class="click-popup-text">click — 2 más para ver proyectos ⚡</span>
+    </div>
+  </div>
+
   <!-- ══════════════ HERO ══════════════ -->
   <section id="hero" class="section hero-section">
     <div class="container">
@@ -109,9 +117,10 @@
     <div class="strip-track">
       <span>Desarrollo Web ·</span><span>E-commerce ·</span><span>Estrategia Digital ·</span>
       <span>WhatsApp Automation ·</span><span>UI/UX Diseño ·</span><span>SEO On-page ·</span>
-      <span>Sistemas de Venta ·</span><span>Desarrollo Web ·</span><span>E-commerce ·</span>
-      <span>Estrategia Digital ·</span><span>WhatsApp Automation ·</span><span>UI/UX Diseño ·</span>
-      <span>SEO On-page ·</span><span>Sistemas de Venta ·</span>
+      <span>Sistemas de Venta ·</span>
+      <span>Desarrollo Web ·</span><span>E-commerce ·</span><span>Estrategia Digital ·</span>
+      <span>WhatsApp Automation ·</span><span>UI/UX Diseño ·</span><span>SEO On-page ·</span>
+      <span>Sistemas de Venta ·</span>
     </div>
   </div>
 
@@ -124,19 +133,77 @@
       </div>
       <div class="value-grid">
         <div class="value-item reveal" data-delay="0">
-          <div class="value-icon"><i data-feather="cpu"></i></div>
-          <div class="value-title">Ingeniería, no diseño</div>
-          <div class="value-desc">Cada elemento tiene una función. Nada es decorativo sin propósito. El resultado convierte visitas en clientes.</div>
+          <div class="premium-icon">
+            <div class="icon-3d-wrapper">
+              <svg viewBox="0 0 64 64" fill="none" class="icon-3d">
+                <rect x="14" y="14" width="36" height="36" rx="8" stroke="url(#lime-grad-1)" stroke-width="3"/>
+                <rect x="22" y="22" width="20" height="20" rx="4" fill="url(#lime-grad-1)"/>
+                <circle cx="20" cy="20" r="3" fill="#CCFF00"/>
+                <circle cx="44" cy="20" r="3" fill="#CCFF00"/>
+                <circle cx="20" cy="44" r="3" fill="#CCFF00"/>
+                <circle cx="44" cy="44" r="3" fill="#CCFF00"/>
+                <path d="M32 10V14M32 50V54M10 32H14M50 32H54" stroke="url(#lime-grad-1)" stroke-width="2" stroke-linecap="round"/>
+                <defs>
+                  <linearGradient id="lime-grad-1" x1="0" y1="0" x2="64" y2="64">
+                    <stop offset="0%" stop-color="#CCFF00"/>
+                    <stop offset="100%" stop-color="#88AA00"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+              <div class="icon-shine"></div>
+              <div class="icon-glow"></div>
+            </div>
+          </div>
+          <div class="value-content">
+            <div class="value-title">Ingeniería, no diseño</div>
+            <div class="value-desc">Cada elemento tiene una función. Nada es decorativo sin propósito. El resultado convierte visitas en clientes.</div>
+          </div>
         </div>
         <div class="value-item reveal" data-delay="100">
-          <div class="value-icon"><i data-feather="trending-up"></i></div>
-          <div class="value-title">Inversión, no gasto</div>
-          <div class="value-desc">Un sistema digital que funciona las 24 horas genera retorno medible. El promedio de mis clientes reporta 3x ROI en 90 días.</div>
+          <div class="premium-icon">
+            <div class="icon-3d-wrapper">
+              <svg viewBox="0 0 64 64" fill="none" class="icon-3d">
+                <path d="M8 48L20 36L32 44L44 20L56 28" stroke="url(#lime-grad-2)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <path d="M56 28L56 48L40 56" stroke="url(#lime-grad-2)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <circle cx="56" cy="28" r="4" fill="#CCFF00"/>
+                <defs>
+                  <linearGradient id="lime-grad-2" x1="0" y1="0" x2="64" y2="64">
+                    <stop offset="0%" stop-color="#CCFF00"/>
+                    <stop offset="100%" stop-color="#88AA00"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+              <div class="icon-shine"></div>
+              <div class="icon-glow"></div>
+            </div>
+          </div>
+          <div class="value-content">
+            <div class="value-title">Inversión, no gasto</div>
+            <div class="value-desc">Un sistema digital que funciona las 24 horas genera retorno medible. El promedio de mis clientes reporta 3x ROI en 90 días.</div>
+          </div>
         </div>
         <div class="value-item reveal" data-delay="200">
-          <div class="value-icon"><i data-feather="shield"></i></div>
-          <div class="value-title">Código tuyo, siempre</div>
-          <div class="value-desc">Sin suscripciones, sin dependencias. Al entregar el proyecto, el repositorio es 100% tuyo. Sin letra chica.</div>
+          <div class="premium-icon">
+            <div class="icon-3d-wrapper">
+              <svg viewBox="0 0 64 64" fill="none" class="icon-3d">
+                <path d="M32 8L44 18V34C44 44 38 52 32 56C26 52 20 44 20 34V18L32 8Z" stroke="url(#lime-grad-3)" stroke-width="3" fill="none"/>
+                <path d="M24 30L28 34L40 22" stroke="url(#lime-grad-3)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M32 12L36 16L32 20L28 16L32 12Z" fill="url(#lime-grad-3)"/>
+                <defs>
+                  <linearGradient id="lime-grad-3" x1="0" y1="0" x2="64" y2="64">
+                    <stop offset="0%" stop-color="#CCFF00"/>
+                    <stop offset="100%" stop-color="#88AA00"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+              <div class="icon-shine"></div>
+              <div class="icon-glow"></div>
+            </div>
+          </div>
+          <div class="value-content">
+            <div class="value-title">Código tuyo, siempre</div>
+            <div class="value-desc">Sin suscripciones, sin dependencias. Al entregar el proyecto, el repositorio es 100% tuyo. Sin letra chica.</div>
+          </div>
         </div>
       </div>
     </div>
@@ -148,52 +215,54 @@
       <div class="section-header reveal">
         <span class="section-tag mono">/ SERVICIOS</span>
         <h2 class="section-title">Elige tu <span class="gradient-text">nivel de potencia</span></h2>
-        <p class="section-sub">Tres planes claros. Precio fijo. Sin sorpresas. Precios en USD.</p>
+        <p class="section-sub">Cuatro planes claros. Precio fijo. Sin sorpresas. Precios en USD.</p>
       </div>
       <div class="services-grid">
         <div class="service-card reveal" data-delay="0">
-          <div class="card-header">
-            <span class="card-tag">STARTER</span>
-            <div class="card-icon"><i data-feather="zap"></i></div>
-          </div>
+          <h3 class="card-title">Básico</h3>
+          <p class="card-desc">1 página de destino simple pero efectiva. Ideal para empezar.</p>
           <div class="card-price">
             <span class="price-from">Desde</span>
-            <span class="price-amount">$149</span>
+            <span class="price-amount" data-usd="99">$99</span>
             <span class="price-currency">USD</span>
+            <button class="price-toggle" type="button" aria-label="Cambiar moneda">USD/CLP</button>
           </div>
-          <h3 class="card-title">Landing de Conversión</h3>
-          <p class="card-desc">1 página de alto impacto. Mobile-first. Entrega en 5 días hábiles.</p>
           <a href="/servicios.html" class="btn btn-outline btn-full">Ver detalles →</a>
         </div>
 
-        <div class="service-card featured reveal" data-delay="100">
-          <div class="card-popular">⚡ MÁS VENDIDO</div>
-          <div class="card-header">
-            <span class="card-tag">PRO</span>
-            <div class="card-icon"><i data-feather="cpu"></i></div>
-          </div>
+        <div class="service-card reveal" data-delay="100">
+          <h3 class="card-title">Starter</h3>
+          <p class="card-desc">1 página de alto impacto. Mobile-first. Ideal para campañas Google Ads. Entrega en 5 días hábiles.</p>
           <div class="card-price">
             <span class="price-from">Desde</span>
-            <span class="price-amount">$399</span>
+            <span class="price-amount" data-usd="149">$149</span>
             <span class="price-currency">USD</span>
+            <button class="price-toggle" type="button" aria-label="Cambiar moneda">USD/CLP</button>
           </div>
-          <h3 class="card-title">E-commerce SPA Completa</h3>
-          <p class="card-desc">Catálogo, carrito, pedidos por WhatsApp y panel admin incluido.</p>
+          <a href="/servicios.html" class="btn btn-outline btn-full">Ver detalles →</a>
+        </div>
+
+        <div class="service-card featured reveal" data-delay="200">
+          <h3 class="card-title">Pro</h3>
+          <p class="card-desc">Catálogo, carrito, integración Webpay Chile y panel admin incluido.</p>
+          <div class="card-price">
+            <span class="price-from">Desde</span>
+            <span class="price-amount" data-usd="399">$399</span>
+            <span class="price-currency">USD</span>
+            <button class="price-toggle" type="button" aria-label="Cambiar moneda">USD/CLP</button>
+          </div>
           <a href="/contacto.html?plan=pro" class="btn btn-lime btn-full">Quiero este plan</a>
         </div>
 
-        <div class="service-card reveal" data-delay="200">
-          <div class="card-header">
-            <span class="card-tag">ELITE</span>
-            <div class="card-icon"><i data-feather="layers"></i></div>
-          </div>
+        <div class="service-card reveal" data-delay="300">
+          <h3 class="card-title">Elite</h3>
+          <p class="card-desc">Web + estrategia Instagram + automatización WhatsApp + soporte 60 días.</p>
           <div class="card-price">
             <span class="price-from">Desde</span>
-            <span class="price-amount">$899</span>
+            <span class="price-amount" data-usd="899">$899</span>
             <span class="price-currency">USD</span>
+            <button class="price-toggle" type="button" aria-label="Cambiar moneda">USD/CLP</button>
           </div>
-          <h3 class="card-title">Sistema Digital Completo</h3>
-          <p class="card-desc">Web + estrategia + automatización + soporte 60 días.</p>
           <a href="/servicios.html" class="btn btn-outline btn-full">Ver detalles →</a>
         </div>
       </div>
@@ -201,11 +270,11 @@
   </section>
 
   <!-- ══════════════ PROYECTOS DESTACADOS (dark) ══════════════ -->
-  <section class="section dark-section featured-projects">
+  <section class="section section-surface featured-projects">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-tag mono">/ PORTAFOLIO</span>
-        <h2 class="section-title" style="color:var(--text-light);">Trabajo <span style="background:linear-gradient(135deg,#CCFF00,#88AA00);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">real</span></h2>
+        <h2 class="section-title">Trabajo <span class="gradient-text">real</span></h2>
         <p class="section-sub">Proyectos construidos, entregados y funcionando en producción.</p>
       </div>
       <div class="portfolio-grid">
@@ -305,6 +374,38 @@
               <div><strong>Fundadora</strong><span class="mono">Empresa de mudanzas</span></div>
             </div>
           </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p>"Desde que tengo la web, mis clientes me contactan solos. El sistema de WhatsApp es oro."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background:#8B4513;">MA</div>
+              <div><strong>Dueña de tienda</strong><span class="mono">Artesanía Chile</span></div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p>"Rápido, profesional y económico. Mi landing para Google Ads convirtió el triple."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background:#2E8B57;">PD</div>
+              <div><strong>Marketing Digital</strong><span class="mono">Pedro Advisor</span></div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p>"Me cambió el negocio. Ahora vendo 24/7 sin estar pegado al teléfono. Impresionante."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background:#CD853F;">JT</div>
+              <div><strong>Emprendedor</strong><span class="mono">Juan Tienda</span></div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p>"El mejor desarrollador que he contratado. Entiende de ventas, no solo de código. Totalmente recomendado."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background:#4169E1;">AC</div>
+              <div><strong>Consultora</strong><span class="mono">Ana Consultas</span></div>
+            </div>
+          </div>
         </div>
         <div class="carousel-controls">
           <button class="carousel-btn" id="prev-btn" aria-label="Anterior"><i data-feather="chevron-left"></i></button>
@@ -320,8 +421,8 @@
     <div class="container">
       <div class="cta-content">
         <span class="cta-tag mono">¿LISTO PARA EMPEZAR?</span>
-        <h2 class="cta-title">Tu negocio necesita <span class="gradient-text">un sistema</span>, no solo un sitio.</h2>
-        <p class="cta-sub">Respondo en menos de 24h. Primera consulta sin costo.</p>
+        <h2 class="cta-title">Tu negocio necesita <span class="gradient-text">un sistema</span>, no solo un sitio</h2>
+        <p class="cta-sub">Contactame y comencemos tu proyecto.<br> Primera consulta sin costo.</p>
         <a href="https://wa.me/56950147783?text=Hola!%20Vi%20tu%20portfolio%20y%20quiero%20empezar%20mi%20proyecto%20digital"
            class="btn btn-lime btn-lg btn-glow" target="_blank" rel="noopener">
           <i data-feather="message-circle"></i>

@@ -16,7 +16,14 @@
 
 /* Sección sobre surface */
 .section-surface  { background: var(--surface); }
+.section-surface .section-tag { color: var(--lime-on-light); }
+.section-surface .section-title { color: var(--text-primary); }
+.section-surface .section-sub { color: var(--text-secondary); }
 .section-secondary { background: var(--surface-secondary); }
+.section-dark { background: var(--dark); color: var(--text-light); }
+.section-dark .section-sub { color: var(--muted-light); }
+.section-dark .section-tag { color: var(--lime); }
+.section-dark .section-title { color: var(--text-light); }
 
 /* Sección oscura */
 .dark-section, .dark-bg {

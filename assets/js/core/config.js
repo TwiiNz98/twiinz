@@ -17,9 +17,10 @@ window.TwiiNz.CONFIG = {
   GITHUB_URL:     'https://github.com',
 
   PRECIOS: {
-    starter: { usd: 149, label: 'Landing de Conversión' },
-    pro:     { usd: 399, label: 'E-commerce SPA Completa' },
-    elite:   { usd: 899, label: 'Sistema Digital Completo' }
+    basico:  { usd: 99,  label: 'Landing Express' },
+    starter: { usd: 149, label: 'Landing Profesional' },
+    pro:     { usd: 399, label: 'Tienda Online' },
+    elite:   { usd: 899, label: 'Sistema Web Integral' }
   },
 
   CONVERSION_USD_CLP: 950, // Tipo de cambio base — actualizable

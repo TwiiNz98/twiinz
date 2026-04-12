@@ -24,10 +24,59 @@
 .currency-label { color: var(--text-secondary); transition: color 0.2s; }
 .currency-label.active { color: var(--text-primary); font-weight: 700; }
 
-/* ─── TABLA COMPARATIVA ─── */
-.comparison-section { background: var(--surface); }
-.table-scroll-hint {
-  font-family: var(--font-mono); font-size: 0.62rem; color: var(--text-muted);
-  text-align: center; margin-bottom: 0.75rem;
+/* ─── SERVICE CARD SELECTABLE ─── */
+.service-card {
+  cursor: pointer;
+  transition: all 0.3s var(--ease-expo);
 }
-@media (min-width: 768px) { .table-scroll-hint { display: none; } }
+
+.service-card:hover {
+  border-color: var(--lime-on-light);
+  transform: translateY(-2px);
+}
+
+.service-card.selected {
+  border: 2px solid var(--lime);
+  box-shadow: 
+    0 0 0 1px var(--lime), 
+    0 12px 40px rgba(204,255,0,0.15),
+    0 0 30px rgba(204,255,0,0.08);
+  transform: scale(1.02);
+  background: var(--surface);
+}
+
+.service-card.selected .card-title {
+  font-weight: 700;
+}
+
+.service-card.selected .card-features li {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.service-card.selected .card-features li.disabled {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.service-card.selected .card-tag {
+  color: var(--lime);
+  border-color: var(--lime);
+  background: rgba(204,255,0,0.1);
+}
+
+.service-card.selected .card-icon {
+  background: rgba(204,255,0,0.15);
+  color: var(--lime);
+}
+
+.service-card.featured.selected {
+  border-color: var(--lime);
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 768px) {
+  .service-card.selected {
+    transform: scale(1);
+  }
+}

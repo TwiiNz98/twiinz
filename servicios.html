@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="TwiiNz Studio — Planes y precios de desarrollo web. Landing desde $149 USD, E-commerce desde $399 USD, Sistema Digital desde $899 USD." />
+  <meta name="description" content="TwiiNz Studio — Planes y precios de desarrollo web. Landing Express desde $99 USD, Landing Profesional desde $149 USD, Tienda Online desde $399 USD, Sistema Web Integral desde $899 USD." />
   <meta property="og:title" content="Servicios — TwiiNz Studio" />
   <title>Servicios — TwiiNz Studio</title>
 
@@ -41,28 +41,40 @@
       <h1 class="section-title reveal" style="font-size:clamp(2rem,6vw,4rem);margin-bottom:0.75rem;">
         Elige tu <span class="gradient-text">nivel de potencia</span>
       </h1>
-      <p class="section-sub reveal">Tres planes claros. Precio fijo antes de empezar. Sin sorpresas, sin letra chica.</p>
+      <p class="section-sub reveal">Cuatro planes claros. Precio fijo antes de empezar. Sin sorpresas, sin letra chica.</p>
     </div>
   </header>
-
-  <!-- ══ TOGGLE USD/CLP ══ -->
-  <section class="section" style="padding-top:2rem;padding-bottom:0;">
-    <div class="container">
-      <div class="currency-toggle-wrap reveal">
-        <span class="currency-label active" id="label-usd">USD</span>
-        <div class="currency-toggle" id="currency-toggle" role="switch" aria-checked="false" tabindex="0" aria-label="Cambiar moneda">
-          <div class="toggle-knob"></div>
-        </div>
-        <span class="currency-label" id="label-clp">CLP</span>
-      </div>
-    </div>
-  </section>
 
   <!-- ══ PLANES ══ -->
   <section class="section">
     <div class="container">
       <div class="services-grid">
-        <div class="service-card reveal" data-delay="0">
+        <div class="service-card reveal" data-plan="basico" data-delay="0">
+          <div class="card-header">
+            <span class="card-tag">BÁSICO</span>
+            <div class="card-icon"><i data-feather="circle"></i></div>
+          </div>
+          <div class="card-price">
+            <span class="price-from">Desde</span>
+            <span class="price-amount">$99</span>
+            <span class="price-currency">USD</span>
+          </div>
+          <h3 class="card-title">Básico</h3>
+          <p class="card-desc">Perfecta para empezar. Landing simple pero efectiva para captar tus primeros clientes.</p>
+          <ul class="card-features">
+            <li><i data-feather="check"></i> 1 página de destino</li>
+            <li><i data-feather="check"></i> Diseño responsive</li>
+            <li><i data-feather="check"></i> Formulario de contacto</li>
+            <li><i data-feather="check"></i> Enlace a WhatsApp</li>
+            <li><i data-feather="check"></i> Entrega en 3 días</li>
+            <li><i data-feather="check"></i> 1 ronda de revisiones</li>
+            <li class="disabled"><i data-feather="x"></i> Panel de administración</li>
+            <li class="disabled"><i data-feather="x"></i> Catálogo de productos</li>
+          </ul>
+          <a href="/contacto.html?plan=basico" class="btn btn-outline btn-full">Consultar ahora</a>
+        </div>
+
+        <div class="service-card reveal" data-plan="starter" data-delay="100">
           <div class="card-header">
             <span class="card-tag">STARTER</span>
             <div class="card-icon"><i data-feather="zap"></i></div>
@@ -72,8 +84,8 @@
             <span class="price-amount">$149</span>
             <span class="price-currency">USD</span>
           </div>
-          <h3 class="card-title">Landing de Conversión</h3>
-          <p class="card-desc">Perfecta para lanzar un producto, servicio o captar leads con urgencia.</p>
+          <h3 class="card-title">Starter</h3>
+          <p class="card-desc">Perfecta para lanzar un producto, servicio o captar leads con campañas Google Ads o Meta Ads.</p>
           <ul class="card-features">
             <li><i data-feather="check"></i> 1 página de alto impacto</li>
             <li><i data-feather="check"></i> Diseño mobile-first</li>
@@ -86,7 +98,7 @@
           <a href="/contacto.html?plan=starter" class="btn btn-outline btn-full">Consultar ahora</a>
         </div>
 
-        <div class="service-card featured reveal" data-delay="100">
+        <div class="service-card featured reveal" data-plan="pro" data-delay="200">
           <div class="card-popular">⚡ MÁS VENDIDO</div>
           <div class="card-header">
             <span class="card-tag">PRO</span>
@@ -97,12 +109,13 @@
             <span class="price-amount">$399</span>
             <span class="price-currency">USD</span>
           </div>
-          <h3 class="card-title">E-commerce SPA Completa</h3>
-          <p class="card-desc">Tu tienda online con catálogo, pedidos vía WhatsApp y panel de gestión.</p>
+          <h3 class="card-title">Pro</h3>
+          <p class="card-desc">Tu tienda online con catálogo, integración Webpay Chile y pedidos vía WhatsApp.</p>
           <ul class="card-features">
             <li><i data-feather="check"></i> SPA multi-sección</li>
             <li><i data-feather="check"></i> Catálogo de productos</li>
-            <li><i data-feather="check"></i> Carrito + pedidos por WA</li>
+            <li><i data-feather="check"></i> Carrito + integración Webpay Chile</li>
+            <li><i data-feather="check"></i> Pedidos por WhatsApp</li>
             <li><i data-feather="check"></i> Panel admin (CRUD)</li>
             <li><i data-feather="check"></i> Entrega en 12 días hábiles</li>
             <li><i data-feather="check"></i> 3 rondas de revisiones</li>
@@ -111,7 +124,7 @@
           <a href="/contacto.html?plan=pro" class="btn btn-lime btn-full">Quiero este plan</a>
         </div>
 
-        <div class="service-card reveal" data-delay="200">
+        <div class="service-card reveal" data-plan="elite" data-delay="300">
           <div class="card-header">
             <span class="card-tag">ELITE</span>
             <div class="card-icon"><i data-feather="layers"></i></div>
@@ -121,7 +134,7 @@
             <span class="price-amount">$899</span>
             <span class="price-currency">USD</span>
           </div>
-          <h3 class="card-title">Sistema Digital Completo</h3>
+          <h3 class="card-title">Elite</h3>
           <p class="card-desc">Web + estrategia de contenido + automatización + soporte 60 días.</p>
           <ul class="card-features">
             <li><i data-feather="check"></i> Todo lo del plan Pro</li>
@@ -136,43 +149,6 @@
         </div>
       </div>
       <p class="services-note reveal"><i data-feather="info"></i> Proyectos personalizados disponibles — <a href="https://wa.me/56950147783?text=Tengo%20un%20proyecto%20personalizado" target="_blank" rel="noopener">conversemos</a>.</p>
-    </div>
-  </section>
-
-  <!-- ══ TABLA COMPARATIVA ══ -->
-  <section class="section comparison-section">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag mono">/ COMPARATIVA</span>
-        <h2 class="section-title">Todos los <span class="gradient-text">detalles</span></h2>
-      </div>
-      <p class="table-scroll-hint">← Desliza para ver la tabla →</p>
-      <div class="table-wrap reveal">
-        <table class="comparison-table">
-          <thead>
-            <tr>
-              <th style="text-align:left;">Característica</th>
-              <th>Starter</th>
-              <th class="featured-col">Pro ⚡</th>
-              <th>Elite</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Precio base USD</td><td class="val">$149</td><td class="val">$399</td><td class="val">$899</td></tr>
-            <tr><td>Páginas / secciones</td><td>1 página</td><td>Multi-sección</td><td>Multi-sección</td></tr>
-            <tr><td>Diseño mobile-first</td><td><i data-feather="check" class="check"></i></td><td><i data-feather="check" class="check"></i></td><td><i data-feather="check" class="check"></i></td></tr>
-            <tr><td>Formulario + WhatsApp</td><td><i data-feather="check" class="check"></i></td><td><i data-feather="check" class="check"></i></td><td><i data-feather="check" class="check"></i></td></tr>
-            <tr><td>Catálogo de productos</td><td><i data-feather="x" class="cross"></i></td><td><i data-feather="check" class="check"></i></td><td><i data-feather="check" class="check"></i></td></tr>
-            <tr><td>Panel admin (CRUD)</td><td><i data-feather="x" class="cross"></i></td><td><i data-feather="check" class="check"></i></td><td><i data-feather="check" class="check"></i></td></tr>
-            <tr><td>Hosting Netlify</td><td><i data-feather="x" class="cross"></i></td><td><i data-feather="check" class="check"></i></td><td><i data-feather="check" class="check"></i></td></tr>
-            <tr><td>Firebase / DB</td><td><i data-feather="x" class="cross"></i></td><td><i data-feather="x" class="cross"></i></td><td><i data-feather="check" class="check"></i></td></tr>
-            <tr><td>Estrategia IG</td><td><i data-feather="x" class="cross"></i></td><td><i data-feather="x" class="cross"></i></td><td><i data-feather="check" class="check"></i></td></tr>
-            <tr><td>Soporte post-entrega</td><td class="val">—</td><td class="val">—</td><td class="val">60 días</td></tr>
-            <tr><td>Rondas de revisión</td><td class="val">1</td><td class="val">3</td><td class="val">Ilimitadas</td></tr>
-            <tr><td>Plazo de entrega</td><td class="val">5 días</td><td class="val">12 días</td><td class="val">~4 semanas</td></tr>
-          </tbody>
-        </table>
-      </div>
     </div>
   </section>
 
@@ -206,7 +182,7 @@
           <button class="faq-question" style="color:var(--text-light);">
             <span>¿El precio incluye dominio y hosting?</span><i data-feather="plus"></i>
           </button>
-          <div class="faq-answer"><p style="color:var(--muted-light);">El plan Pro incluye hosting en Netlify (gratis para proyectos estáticos). El dominio se gestiona por separado (~$12 USD/año). El plan Elite incluye gestión de dominio y SSL.</p></div>
+          <div class="faq-answer"><p style="color:var(--muted-light);">El plan Pro incluye hosting en Netlify (gratis para proyectos estáticos). El dominio se gestiona por separado (~$12 USD/año). El plan Elite incluye gestión de dominio y SSL. Los planes Básico y Starter no incluyen hosting pero te asesoro en la configuración.</p></div>
         </div>
       </div>
       <div style="text-align:center;margin-top:2.5rem;" class="reveal">
