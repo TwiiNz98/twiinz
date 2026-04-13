@@ -111,8 +111,8 @@ window.TwiiNz.Components.initCarousel = function() {
 };
 
 /* ────────────────────────────────────────
-   FAB
-──────────────────────────────────────── */
+    FAB
+ ──────────────────────────────────────── */
 window.TwiiNz.Components.initFAB = function() {
   window.TwiiNz.UI.initScrollToTop && window.TwiiNz.UI.initScrollToTop();
 };

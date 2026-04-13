@@ -29,9 +29,20 @@
   <header class="hero-mini-dark">
     <div class="container">
       <span class="section-tag mono reveal">/ CONTACTO</span>
-      <h1 class="section-title reveal" style="font-size:clamp(2rem,6vw,4rem);margin-bottom:0.75rem;color:var(--text-light);">
+<h1 class="section-title reveal" style="font-size:clamp(2rem,6vw,4rem);margin-bottom:0.75rem;color:var(--text-light);">
         Hablemos <span style="background:linear-gradient(135deg,#CCFF00,#88AA00);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">hoy</span>
       </h1>
+      <style>
+@keyframes flame-appear {
+  0% { opacity: 0; transform: scale(0) translateY(-10px); }
+  50% { opacity: 1; transform: scale(1.5) translateY(0); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes text-appear {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+      </style>
       <p class="section-sub reveal" style="color:var(--muted-light);">La mejor forma de empezar es con una conversación directa. Sin formularios eternos, sin esperas.</p>
     </div>
   </header>
@@ -130,6 +141,19 @@
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band reveal">
+    <div class="container">
+      <span class="cta-tag mono">¿LISTO PARA EMPEZAR?</span>
+      <h2 class="cta-title">El primer paso es <span class="gradient-text">una conversación</span></h2>
+      <p class="cta-sub">Sin compromiso. Sin costos. Solo hablemos.</p>
+      <a href="https://wa.me/56950147783?text=Hola!%20Quiero%20iniciar%20un%20proyecto" class="btn btn-lime btn-lg btn-glow" target="_blank" rel="noopener">
+        <i data-feather="message-circle"></i> Empezar ahora
+      </a>
+    </div>
+    <div class="cta-decoration"></div>
   </section>
 
   <div id="footer-slot"></div>
