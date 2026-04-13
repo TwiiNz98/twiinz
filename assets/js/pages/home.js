@@ -111,37 +111,4 @@ document.addEventListener('DOMContentLoaded', () => {
     
     animate();
   })();
-
-  // ── TOGGLE MONEDA USD/CLP ──
-  (function initPriceToggle() {
-    const toggles = document.querySelectorAll('.price-toggle');
-    if (!toggles.length) return;
-
-    const CLP_RATE = 980;
-    let isCLP = false;
-
-    function formatCLP(usd) {
-      return '$' + (usd * CLP_RATE).toLocaleString('es-CL');
-    }
-
-    toggles.forEach(toggle => {
-      toggle.addEventListener('click', (e) => {
-        e.preventDefault();
-        const amountEl = toggle.previousElementSibling;
-        const currencyEl = toggle.previousElementSibling.previousElementSibling;
-        const usdValue = parseInt(amountEl.dataset.usd);
-
-        if (isCLP) {
-          amountEl.textContent = '$' + usdValue;
-          currencyEl.textContent = 'USD';
-          toggle.textContent = 'USD/CLP';
-        } else {
-          amountEl.textContent = formatCLP(usdValue);
-          currencyEl.textContent = 'CLP';
-          toggle.textContent = 'CLP/USD';
-        }
-        isCLP = !isCLP;
-      });
-    });
-  })();
 });

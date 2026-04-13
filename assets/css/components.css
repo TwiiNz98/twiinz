@@ -200,6 +200,7 @@
    SERVICE CARDS
 ════════════════════════════════════════ */
 .services-grid { display: flex; flex-direction: column; gap: 1.25rem; }
+
 .service-card {
   background: var(--surface);
   border: 1px solid var(--border-light);
@@ -209,7 +210,120 @@
   transition: all 0.25s var(--ease-expo);
   max-width: 260px;
   margin: 0 auto;
+  overflow: hidden;
+  --card-glow: #CCFF00;
+  --card-glow-rgb: 122, 153, 0;
 }
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 20%, rgba(var(--card-glow-rgb), 0.15) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.service-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg at 50% 50%, transparent 0deg, var(--card-glow) 10deg, transparent 20deg, transparent 350deg, var(--card-glow) 360deg);
+  animation: card-rotate 6s linear infinite;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 0;
+  mix-blend-mode: overlay;
+}
+
+.service-card .card-glow-lines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.service-card .card-glow-lines::before,
+.service-card .card-glow-lines::after {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 0%, var(--card-glow) 20%, var(--card-glow) 80%, transparent 100%);
+  opacity: 0.6;
+}
+
+.service-card .card-glow-lines::before {
+  left: 25%;
+  animation: line-pulse 2.5s ease-in-out infinite;
+}
+
+.service-card .card-glow-lines::after {
+  right: 25%;
+  animation: line-pulse 2.5s ease-in-out infinite 1s;
+}
+
+@keyframes line-pulse {
+  0%, 100% { opacity: 0; transform: scaleY(0); }
+  50% { opacity: 0.8; transform: scaleY(1); }
+}
+
+.service-card > * { position: relative; z-index: 1; }
+
+.service-card[data-plan="basico"] {
+  --card-glow: #00D4FF;
+  --card-glow-rgb: 0, 212, 255;
+}
+.service-card[data-plan="starter"] {
+  --card-glow: #FFB800;
+  --card-glow-rgb: 255, 184, 0;
+}
+.service-card[data-plan="pro"] {
+  --card-glow: #CCFF00;
+  --card-glow-rgb: 122, 153, 0;
+}
+.service-card[data-plan="elite"] {
+  --card-glow: #9B00FF;
+  --card-glow-rgb: 155, 0, 255;
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+.service-card:hover::after {
+  opacity: 0.6;
+  animation: card-rotate 4s linear infinite;
+}
+
+.service-card:hover .card-glow-lines {
+  opacity: 1;
+}
+
+@keyframes card-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.service-card[data-plan="basico"]:hover { border-color: #00D4FF; box-shadow: 0 0 30px rgba(0,212,255,0.25), inset 0 0 20px rgba(0,212,255,0.05); }
+.service-card[data-plan="starter"]:hover { border-color: #FFB800; box-shadow: 0 0 30px rgba(255,184,0,0.25), inset 0 0 20px rgba(255,184,0,0.05); }
+.service-card[data-plan="pro"]:hover { border-color: #CCFF00; box-shadow: 0 0 30px rgba(122,153,0,0.25), inset 0 0 20px rgba(122,153,0,0.05); }
+.service-card[data-plan="elite"]:hover { border-color: #9B00FF; box-shadow: 0 0 30px rgba(155,0,255,0.25), inset 0 0 20px rgba(155,0,255,0.05); }
+
+.service-card[data-plan="basico"] .card-title,
+.service-card[data-plan="basico"] .price-amount { background: linear-gradient(135deg, #00D4FF, #0099CC); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.service-card[data-plan="starter"] .card-title,
+.service-card[data-plan="starter"] .price-amount { background: linear-gradient(135deg, #FFB800, #CC9200); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.service-card[data-plan="elite"] .card-title,
+.service-card[data-plan="elite"] .price-amount { background: linear-gradient(135deg, #9B00FF, #6A00CC); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
 .service-card.featured {
   border-color: var(--lime-on-light);
   box-shadow: 0 0 0 1px var(--lime-on-light), 0 0 40px rgba(122,153,0,0.08);
@@ -234,10 +348,8 @@
 .card-icon svg { width: 17px; height: 17px; }
 .card-price    { display: flex; flex-direction: column; align-items: center; gap: 0.25rem; margin: 1rem 0 0.5rem; position: relative; }
 .price-from    { font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono); }
-.price-amount  { font-family: var(--font-display); font-weight: 800; font-size: clamp(2rem, 7vw, 2.5rem); line-height: 1; color: var(--text-primary); letter-spacing: -0.04em; }
+.price-amount  { font-family: var(--font-body); font-weight: 600; font-size: clamp(1.8rem, 5vw, 2.2rem); line-height: 1; color: var(--text-primary); letter-spacing: -0.02em; }
 .price-currency { font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono); }
-.price-toggle  { font-size: 0.65rem; font-family: var(--font-mono); color: var(--lime-on-light); background: transparent; border: 1px solid var(--lime-on-light); border-radius: 4px; padding: 0.15rem 0.4rem; cursor: pointer; transition: all 0.2s ease; }
-.price-toggle:hover { background: var(--lime-on-light); color: var(--surface); }
 .card-title    { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; margin-bottom: 0.45rem; background: linear-gradient(135deg, #CCFF00, #88AA00); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .card-desc     { font-size: 0.83rem; color: var(--text-secondary); margin-bottom: 1.25rem; line-height: 1.6; }
 .card-features { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.75rem; }

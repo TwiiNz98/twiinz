@@ -49,12 +49,17 @@
   display: flex; flex-direction: column; align-items: center; gap: 0.15rem;
   border-right: 1px solid var(--dark-border); border-bottom: 1px solid var(--dark-border);
 }
+.stat-item .stat-number-wrapper {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0;
+}
 .stat-item:nth-child(2) { border-right: none; }
 .stat-item:nth-child(3) { border-bottom: none; }
 .stat-item:nth-child(4) { border-right: none; border-bottom: none; }
 .stat-divider { display: none; }
-.stat-number { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.75rem, 6vw, 2.5rem); line-height: 1; color: var(--lime); letter-spacing: -0.04em; }
-.stat-plus, .stat-pct { font-family: var(--font-display); font-weight: 800; font-size: 1rem; color: var(--lime); }
+.stat-number { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.75rem, 6vw, 2.5rem); line-height: 1; color: var(--lime); letter-spacing: -0.04em; display: inline-block; }
+.stat-plus, .stat-pct { font-family: var(--font-display); font-weight: 800; font-size: 1rem; color: var(--lime); display: inline-block; margin-left: 1px; }
 .stat-label { font-size: 0.62rem; color: var(--muted-light); font-family: var(--font-mono); text-align: center; line-height: 1.3; margin-top: 2px; letter-spacing: 0.03em; }
 
 /* ─── PROPUESTA DE VALOR ─── */
@@ -63,6 +68,9 @@
   display: flex; flex-direction: column; align-items: center; text-align: center;
   padding: 1.25rem; background: var(--surface); border: 1px solid var(--border-light);
   border-radius: var(--radius-lg); transition: all 0.3s var(--ease-expo);
+  background-image: radial-gradient(rgba(0,0,0,0.1) 1px, transparent 1px);
+  background-size: 18px 18px;
+  background-position: center;
 }
 
 /* Premium Icon - 3D Style */
@@ -72,11 +80,7 @@
   margin: 0 auto 0.5rem;
   position: relative;
   border-radius: 50%;
-  background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
-  box-shadow: 
-    0 6px 24px rgba(0,0,0,0.5),
-    inset 0 1px 0 rgba(255,255,255,0.08),
-    inset 0 -1px 0 rgba(0,0,0,0.3);
+  background: #ffffff;
 }
 
 .icon-3d-wrapper {
