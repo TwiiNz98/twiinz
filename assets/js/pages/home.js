@@ -26,6 +26,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (typeof feather !== 'undefined') feather.replace({ width: '1em', height: '1em', 'stroke-width': 2 });
 
+  // ── ACID RAIN EFFECT ──
+  (function initAcidRain() {
+    const container = document.getElementById('acid-rain');
+    if (!container) return;
+
+    const dropCount = 30;
+    const colors = ['#CCFF00', '#88CC00', '#AAFF00', '#99FF00'];
+
+    function createDrop() {
+      const drop = document.createElement('div');
+      drop.className = 'acid-drop';
+      
+      const startX = Math.random() * 100;
+      const duration = 4 + Math.random() * 6;
+      const delay = Math.random() * 5;
+      const size = 2 + Math.random() * 3;
+      const height = 8 + Math.random() * 16;
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      
+      drop.style.left = `${startX}%`;
+      drop.style.width = `${size}px`;
+      drop.style.height = `${height}px`;
+      drop.style.background = color;
+      drop.style.animationDuration = `${duration}s`;
+      drop.style.animationDelay = `${delay}s`;
+      drop.style.filter = `blur(${size * 0.4}px)`;
+      
+      container.appendChild(drop);
+      
+      setTimeout(() => {
+        drop.remove();
+      }, (duration + delay) * 1000);
+    }
+
+    function startRain() {
+      createDrop();
+      const nextDrop = 150 + Math.random() * 350;
+      setTimeout(startRain, nextDrop);
+    }
+
+    startRain();
+  })();
+
   // ── CLICK CONTADOR PARA PORTFOLIO ──
   (function initPortfolioClickCounter() {
     const popup = document.getElementById('click-popup');
