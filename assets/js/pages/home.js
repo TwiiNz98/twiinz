@@ -31,16 +31,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('acid-rain');
     if (!container) return;
 
-    const dropCount = 30;
     const colors = ['#CCFF00', '#88CC00', '#AAFF00', '#99FF00'];
 
-    function createDrop() {
+    function createDrop(immediate = false) {
       const drop = document.createElement('div');
       drop.className = 'acid-drop';
       
       const startX = Math.random() * 100;
       const duration = 4 + Math.random() * 6;
-      const delay = Math.random() * 5;
+      const delay = immediate ? Math.random() * 0.5 : Math.random() * 5;
       const size = 2 + Math.random() * 3;
       const height = 8 + Math.random() * 16;
       const color = colors[Math.floor(Math.random() * colors.length)];
@@ -57,15 +56,18 @@ document.addEventListener('DOMContentLoaded', () => {
       
       setTimeout(() => {
         drop.remove();
-      }, (duration + delay) * 1000);
+      }, (duration + delay + 1) * 1000);
     }
 
     function startRain() {
       createDrop();
-      const nextDrop = 150 + Math.random() * 350;
+      const nextDrop = 100 + Math.random() * 250;
       setTimeout(startRain, nextDrop);
     }
 
+    for (let i = 0; i < 12; i++) {
+      setTimeout(() => createDrop(true), i * 80);
+    }
     startRain();
   })();
 
