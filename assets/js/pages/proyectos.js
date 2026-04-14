@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const Anim = window.TwiiNz.Animations;
   const Comp = window.TwiiNz.Components;
 
+  // Sin efectos en portfolio cards
+
   UI.initLoader();
   UI.initCursor();
   UI.initScrollToTop();

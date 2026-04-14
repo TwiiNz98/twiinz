@@ -58,14 +58,14 @@ window.TwiiNz.Components.initFAQ = function() {
 window.TwiiNz.Components.initCarousel = function() {
   const track       = document.getElementById('testimonials-track');
   const prevBtn     = document.getElementById('prev-btn');
-  const nextBtn     = document.getElementById('next-btn');
+  const nextBtn     = document.getElementById('carousel-dots');
   const dotsContainer = document.getElementById('carousel-dots');
   if (!track) return;
 
   const cards = track.querySelectorAll('.testimonial-card');
   let current = 0, autoPlay;
-  let perSlide = window.innerWidth <= 900 ? 1 : 2;
-  const totalSlides = Math.ceil(cards.length / perSlide);
+  let perSlide = 1;
+  const totalSlides = cards.length;
 
   function buildDots() {
     if (!dotsContainer) return;
@@ -81,9 +81,8 @@ window.TwiiNz.Components.initCarousel = function() {
 
   function goTo(index) {
     current = (index + totalSlides) % totalSlides;
-    const offset = current * (100 / perSlide) * perSlide;
+    const offset = current * 100;
     track.style.transform = `translateX(-${offset}%)`;
-    cards.forEach(c => { c.style.minWidth = `calc(${100 / perSlide}% - ${(perSlide - 1) * 1.5 / perSlide}rem)`; });
     if (dotsContainer) dotsContainer.querySelectorAll('.carousel-dot').forEach((d, i) => d.classList.toggle('active', i === current));
   }
 
@@ -92,7 +91,14 @@ window.TwiiNz.Components.initCarousel = function() {
 
   function resetAuto() { clearInterval(autoPlay); autoPlay = setInterval(() => goTo(current + 1), 5000); }
 
-  cards.forEach(c => { c.style.minWidth = `calc(${100 / perSlide}% - ${(perSlide - 1) * 1.5 / perSlide}rem)`; c.style.flexShrink = '0'; });
+  cards.forEach(c => { 
+    c.style.minWidth = 'calc(100% - 2rem)'; 
+    c.style.maxWidth = '400px';
+    c.style.flexShrink = '0'; 
+    c.style.margin = '0 auto';
+  });
+  
+  track.style.justifyContent = 'center';
   buildDots();
   autoPlay = setInterval(() => goTo(current + 1), 5000);
 

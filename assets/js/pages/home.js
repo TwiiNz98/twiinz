@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const Comp = window.TwiiNz.Components;
   const FX   = window.TwiiNz.Effects;
 
+  // Sin efectos en portfolio cards
+
   UI.initLoader();
   UI.initCursor();
   UI.initScrollToTop();
@@ -69,6 +71,19 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => createDrop(true), i * 80);
     }
     startRain();
+  })();
+
+  // ── CARD SPIN ON CLICK ──
+  (function initCardSpin() {
+    document.querySelectorAll('.service-card[data-plan]').forEach(card => {
+      card.addEventListener('click', function() {
+        if (this.classList.contains('spinning')) return;
+        this.classList.add('spinning');
+        setTimeout(() => {
+          this.classList.remove('spinning');
+        }, 500);
+      });
+    });
   })();
 
   // ── CLICK CONTADOR PARA PORTFOLIO ──

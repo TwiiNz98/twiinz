@@ -1,6 +1,6 @@
 /**
  * TWIINZ STUDIO — pages/servicios.js
- * Toggle USD/CLP, pre-fill por URL params, Selector de Planes.
+ * Pre-fill por URL params, Selector de Planes.
  */
 'use strict';
 
@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const UI   = window.TwiiNz.UI;
   const Anim = window.TwiiNz.Animations;
   const Comp = window.TwiiNz.Components;
-  const CONFIG = window.TwiiNz.CONFIG;
 
   UI.initLoader();
   UI.initCursor();
@@ -21,40 +20,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (typeof feather !== 'undefined') feather.replace({ width: '1em', height: '1em', 'stroke-width': 2 });
 
-  // ── TOGGLE USD / CLP ──
-  const toggle     = document.getElementById('currency-toggle');
-  const labelUSD   = document.getElementById('label-usd');
-  const labelCLP   = document.getElementById('label-clp');
-  const amounts    = document.querySelectorAll('.price-amount');
-  const currencies = document.querySelectorAll('.price-currency');
-  
-  if (toggle && CONFIG) {
-    const PRICES = CONFIG.PRECIOS;
-    const RATE   = CONFIG.CONVERSION_USD_CLP;
-    const plans  = ['basico', 'starter', 'pro', 'elite'];
-    let isCLP = false;
-
-    function formatCLP(n) { return '$' + Math.round(n).toLocaleString('es-CL'); }
-
-    function updatePrices() {
-      amounts.forEach((el, i) => {
-        const plan = plans[i];
-        if (!PRICES[plan]) return;
-        if (isCLP) {
-          el.textContent = formatCLP(PRICES[plan].usd * RATE);
-        } else {
-          el.textContent = '$' + PRICES[plan].usd;
-        }
-      });
-      currencies.forEach(el => { el.textContent = isCLP ? 'CLP' : 'USD'; });
-      if (labelUSD) labelUSD.classList.toggle('active', !isCLP);
-      if (labelCLP) labelCLP.classList.toggle('active', isCLP);
-      toggle.classList.toggle('active', isCLP);
-    }
-
-    toggle.addEventListener('click', () => { isCLP = !isCLP; updatePrices(); });
-    updatePrices();
-  }
+  // ── CARD SPIN ON CLICK ──
+  document.querySelectorAll('.service-card[data-plan]').forEach(card => {
+    card.addEventListener('click', function() {
+      if (this.classList.contains('spinning')) return;
+      this.classList.add('spinning');
+      setTimeout(() => {
+        this.classList.remove('spinning');
+      }, 500);
+    });
+  });
 
   // ── SELECTOR DE PLANES INTERACTIVO ──
   const planCards = document.querySelectorAll('.service-card[data-plan]');
