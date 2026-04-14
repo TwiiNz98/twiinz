@@ -52,7 +52,7 @@ body.page-exiting {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, var(--lime-on-light) 0%, #4a6000 100%);
+  background: linear-gradient(135deg, #CCFF00 0%, #88CC00 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -62,7 +62,7 @@ body.page-exiting {
 .dark-bg .gradient-text,
 .dark-section .gradient-text,
 [data-theme="dark"] .gradient-text {
-  background: linear-gradient(135deg, var(--lime) 0%, var(--lime-dim) 100%);
+  background: linear-gradient(135deg, #CCFF00 0%, #99FF00 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

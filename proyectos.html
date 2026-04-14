@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="/assets/css/animations.css" />
   <link rel="stylesheet" href="/assets/css/utilities.css" />
   <link rel="stylesheet" href="/assets/css/pages/proyectos.css" />
+  <link rel="stylesheet" href="/assets/css/pages/proyectos-dashboard.css" />
 </head>
 <body class="page-entering">
   <div id="cursor-dot"></div><div id="cursor-ring"></div>
@@ -29,13 +30,35 @@
 
   <div id="navbar-slot"></div>
 
-  <header class="hero-mini">
+  <header class="dashboard-header">
     <div class="container">
       <span class="section-tag mono reveal">/ PORTAFOLIO</span>
-      <h1 class="section-title reveal" style="font-size:clamp(2rem,6vw,4rem);margin-bottom:0.75rem;">
-        Trabajo real, <span class="gradient-text">entregado en producción</span>
-      </h1>
-      <p class="section-sub reveal">Proyectos construidos, no mockups. Cada uno en producción y funcionando.</p>
+      
+      <!-- Dashboard Metrics -->
+      <div class="dashboard-metrics reveal">
+        <div class="metric-card">
+          <span class="metric-icon">📊</span>
+          <span class="metric-value">12</span>
+          <span class="metric-label">Proyectos Entregados</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-icon">✅</span>
+          <span class="metric-value">100%</span>
+          <span class="metric-label">Éxito Entrega</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-icon">📈</span>
+          <span class="metric-value">3x</span>
+          <span class="metric-label">ROI Promedio</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-icon">💰</span>
+          <span class="metric-value">$2.5M</span>
+          <span class="metric-label">Ventas Generadas</span>
+        </div>
+      </div>
+      
+      <p class="section-sub reveal" style="margin-top:1.5rem;">Proyectos construidos, no mockups. Cada uno en producción y funcionando.</p>
     </div>
   </header>
 
@@ -50,9 +73,13 @@
       </div>
 
       <!-- Grid -->
-      <div class="portfolio-grid">
+      <div class="portfolio-grid dashboard-style">
         <div class="portfolio-item reveal" data-category="ecommerce">
           <div class="portfolio-card">
+            <div class="project-header">
+              <span class="project-status completed">● Completado</span>
+              <span class="project-type-badge">E-commerce</span>
+            </div>
             <div class="portfolio-img" style="background:linear-gradient(135deg,#8B4513 0%,#D2691E 50%,#F4A460 100%);">
               <div class="portfolio-overlay">
                 <span class="portfolio-type">E-commerce</span>
@@ -63,12 +90,34 @@
             </div>
             <div class="portfolio-info">
               <h3>Círculo de Sabores</h3>
+              <div class="project-details">
+                <div class="project-detail">
+                  <span class="project-detail-label">Inversión</span>
+                  <span class="project-detail-value price">$160.000</span>
+                </div>
+                <div class="project-detail">
+                  <span class="project-detail-label">Tech</span>
+                  <span class="project-detail-value">React</span>
+                </div>
+                <div class="project-detail">
+                  <span class="project-detail-label">Visitas/mes</span>
+                  <span class="project-detail-value">2.5K</span>
+                </div>
+                <div class="project-detail">
+                  <span class="project-detail-label">Pedidos/mes</span>
+                  <span class="project-detail-value">45</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         <div class="portfolio-item reveal" data-category="landing">
           <div class="portfolio-card">
+            <div class="project-header">
+              <span class="project-status production">● Producción</span>
+              <span class="project-type-badge">Corporativo</span>
+            </div>
             <div class="portfolio-img" style="background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);">
               <div class="portfolio-overlay">
                 <span class="portfolio-type">Corporativo</span>
@@ -79,12 +128,34 @@
             </div>
             <div class="portfolio-info">
               <h3>Piña GrowShop</h3>
+              <div class="project-details">
+                <div class="project-detail">
+                  <span class="project-detail-label">Inversión</span>
+                  <span class="project-detail-value price">$120.000</span>
+                </div>
+                <div class="project-detail">
+                  <span class="project-detail-label">Tech</span>
+                  <span class="project-detail-value">Vanilla JS</span>
+                </div>
+                <div class="project-detail">
+                  <span class="project-detail-label">Visitas/mes</span>
+                  <span class="project-detail-value">1.8K</span>
+                </div>
+                <div class="project-detail">
+                  <span class="project-detail-label">Pedidos/mes</span>
+                  <span class="project-detail-value">32</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         <div class="portfolio-item reveal" data-category="sistema">
           <div class="portfolio-card">
+            <div class="project-header">
+              <span class="project-status completed">● Completado</span>
+              <span class="project-type-badge">Plataforma</span>
+            </div>
             <div class="portfolio-img" style="background:linear-gradient(135deg,#2d1b69 0%,#5c3317 50%,#c0392b 100%);">
               <div class="portfolio-overlay">
                 <span class="portfolio-type">Plataforma</span>
@@ -95,12 +166,34 @@
             </div>
             <div class="portfolio-info">
               <h3>Joan Supply</h3>
+              <div class="project-details">
+                <div class="project-detail">
+                  <span class="project-detail-label">Inversión</span>
+                  <span class="project-detail-value price">$250.000</span>
+                </div>
+                <div class="project-detail">
+                  <span class="project-detail-label">Tech</span>
+                  <span class="project-detail-value">React+Firebase</span>
+                </div>
+                <div class="project-detail">
+                  <span class="project-detail-label">Usuarios</span>
+                  <span class="project-detail-value">150+</span>
+                </div>
+                <div class="project-detail">
+                  <span class="project-detail-label">Ingresos</span>
+                  <span class="project-detail-value">$800K/mes</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         <div class="portfolio-item reveal" data-category="landing">
           <div class="portfolio-card">
+            <div class="project-header">
+              <span class="project-status production">● Producción</span>
+              <span class="project-type-badge">Corporativo</span>
+            </div>
             <div class="portfolio-img" style="background:linear-gradient(135deg,#004e92 0%,#000428 100%);">
               <div class="portfolio-overlay">
                 <span class="portfolio-type">Corporativo</span>
@@ -111,12 +204,34 @@
             </div>
             <div class="portfolio-info">
               <h3>Logística &amp; Mudanzas</h3>
+              <div class="project-details">
+                <div class="project-detail">
+                  <span class="project-detail-label">Inversión</span>
+                  <span class="project-detail-value price">$75.000</span>
+                </div>
+                <div class="project-detail">
+                  <span class="project-detail-label">Tech</span>
+                  <span class="project-detail-value">Vanilla JS</span>
+                </div>
+                <div class="project-detail">
+                  <span class="project-detail-label">Visitas/mes</span>
+                  <span class="project-detail-value">3.2K</span>
+                </div>
+                <div class="project-detail">
+                  <span class="project-detail-label">Cotizaciones</span>
+                  <span class="project-detail-value">28</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         <div class="portfolio-item reveal" data-category="ecommerce">
           <div class="portfolio-card">
+            <div class="project-header">
+              <span class="project-status completed">● Completado</span>
+              <span class="project-type-badge">E-commerce</span>
+            </div>
             <div class="portfolio-img" style="background:linear-gradient(135deg,#1a1a1a 0%,#333 50%,#1a1a1a 100%);">
               <div class="portfolio-overlay">
                 <span class="portfolio-type">E-commerce</span>
@@ -127,6 +242,24 @@
             </div>
             <div class="portfolio-info">
               <h3>J&amp;C Tienda</h3>
+              <div class="project-details">
+                <div class="project-detail">
+                  <span class="project-detail-label">Inversión</span>
+                  <span class="project-detail-value price">$140.000</span>
+                </div>
+                <div class="project-detail">
+                  <span class="project-detail-label">Tech</span>
+                  <span class="project-detail-value">React</span>
+                </div>
+                <div class="project-detail">
+                  <span class="project-detail-label">Visitas/mes</span>
+                  <span class="project-detail-value">4.1K</span>
+                </div>
+                <div class="project-detail">
+                  <span class="project-detail-label">Pedidos/mes</span>
+                  <span class="project-detail-value">67</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -232,6 +365,7 @@
   <script src="/assets/js/core/animations.js"></script>
   <script src="/assets/js/core/components.js"></script>
   <script src="/assets/js/pages/proyectos.js"></script>
+  <script src="/assets/js/pages/proyectos-dashboard.js"></script>
   <script src="/assets/js/core/page-init.js"></script>
 </body>
 </html>

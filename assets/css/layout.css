@@ -54,7 +54,7 @@
   line-height: 1.08;
   letter-spacing: -0.03em;
   margin-bottom: 0.75rem;
-  color: var(--text-primary);
+  color: #000000;
 }
 .section-sub {
   color: var(--text-secondary);

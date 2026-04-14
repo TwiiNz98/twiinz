@@ -26,6 +26,19 @@ document.addEventListener('DOMContentLoaded', () => {
   Comp.initFAQ();
   Comp.initFAB();
 
+  // ── ABOUT CARD ELASTIC ON CLICK ──
+  (function initAboutCardElastic() {
+    const aboutCard = document.getElementById('about-card-spin');
+    if (!aboutCard) return;
+    aboutCard.addEventListener('click', function() {
+      if (this.classList.contains('pressed')) return;
+      this.classList.add('pressed');
+      setTimeout(() => {
+        this.classList.remove('pressed');
+      }, 400);
+    });
+  })();
+
   if (typeof feather !== 'undefined') feather.replace({ width: '1em', height: '1em', 'stroke-width': 2 });
 
   // ── ACID RAIN EFFECT ──

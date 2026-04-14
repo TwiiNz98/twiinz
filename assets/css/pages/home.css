@@ -188,8 +188,68 @@
 }
 
 .value-title { font-family: var(--font-display); font-weight: 700; font-size: 1rem; color: var(--text-primary); }
-.value-desc  { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5; }
-.value-content { display: flex; flex-direction: column; gap: 0.25rem; text-align: center; }
+.value-desc  { font-size: 0.7rem; color: var(--text-muted); line-height: 1.5; margin-top: 0.25rem; font-style: italic; }
+.value-content { display: flex; flex-direction: column; gap: 0.5rem; text-align: center; align-items: center; }
+.value-list {
+  display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
+  gap: 0.4rem 0.8rem;
+  text-align: center; width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.5rem 2rem 0.5rem 0;
+  border-top: 1px solid rgba(128,128,128,0.15);
+  border-bottom: 1px solid rgba(128,128,128,0.15);
+  position: relative;
+}
+.value-list .term {
+  display: inline-flex; align-items: center; gap: 0.2rem;
+  position: relative;
+}
+.value-list .separator {
+  color: rgba(128,128,128,0.5);
+  font-size: 0.8rem;
+  font-weight: 400;
+  font-family: monospace;
+}
+.value-list .info-btn {
+  position: absolute;
+  right: 0;
+}
+.term { font-weight: 400; font-style: italic; font-size: 0.78rem; 
+  background: linear-gradient(135deg, var(--lime-on-light) 0%, #4a6000 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.info-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 15px; height: 15px; border-radius: 50%;
+  background: rgba(180,180,180, 0.15); border: 1px solid #888;
+  color: #666; font-size: 0.65rem; font-weight: 500;
+  cursor: pointer; transition: all 0.2s; flex-shrink: 0;
+  box-shadow: none;
+}
+.info-btn:hover { background: #888; color: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
+.info-tooltip {
+  display: none; position: absolute; bottom: calc(100% + 8px); right: 0; left: auto;
+  transform: none; background: var(--dark); border: 1px solid #888;
+  border-radius: var(--radius-sm); padding: 0.6rem 0.75rem;
+  font-size: 0.68rem; color: var(--muted-light); line-height: 1.35;
+  width: max-content; max-width: 220px; z-index: 100;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+}
+.info-tooltip::after {
+  content: ''; position: absolute; top: 100%; left: 85%;
+  transform: translateX(-50%); border: 5px solid transparent;
+  border-top-color: #888;
+}
+.info-tooltip strong {
+  background: linear-gradient(135deg, #E0E0E0 0%, #A0A0A0 50%, #E0E0E0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+}
+.info-btn:hover + .info-tooltip, .info-tooltip:hover { display: block; }
 
 /* ─── PROYECTOS DESTACADOS (dark) ─── */
 .featured-projects { background: var(--surface); }

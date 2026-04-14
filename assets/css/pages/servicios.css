@@ -42,7 +42,6 @@
     0 12px 40px rgba(204,255,0,0.15),
     0 0 30px rgba(204,255,0,0.08);
   transform: scale(1.02);
-  background: var(--surface);
 }
 
 .service-card.selected .card-title {
@@ -74,7 +73,35 @@
   border-color: var(--lime);
 }
 
-/* ─── RESPONSIVE ─── */
+/* ─── FEATURES DIVIDER ─── */
+.features-divider {
+  height: 1px;
+  background: rgba(128,128,128,0.15);
+  margin: 0.75rem 0;
+}
+
+/* ─── INFO BUTTON IN CARDS ─── */
+.service-card { position: relative; }
+.card-info-btn {
+  position: absolute;
+  right: 1rem;
+  bottom: 5.5rem;
+  z-index: 5;
+}
+.card-info-btn + .info-tooltip {
+  bottom: auto;
+  top: calc(100% + 8px);
+  right: 0;
+  left: auto;
+  transform: none;
+}
+.card-info-btn + .info-tooltip::after {
+  top: auto;
+  bottom: 100%;
+  border-top-color: transparent;
+  border-bottom-color: #FFA500;
+}
+
 @media (max-width: 768px) {
   .service-card.selected {
     transform: scale(1);
