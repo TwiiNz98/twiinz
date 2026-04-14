@@ -53,19 +53,18 @@ window.TwiiNz.Components.initFAQ = function() {
 };
 
 /* ────────────────────────────────────────
-   CAROUSEL
-──────────────────────────────────────── */
+   CAROUSEL (CSS Scroll Snap)
+ ──────────────────────────────────────── */
 window.TwiiNz.Components.initCarousel = function() {
-  const track       = document.getElementById('testimonials-track');
-  const prevBtn     = document.getElementById('prev-btn');
-  const nextBtn     = document.getElementById('carousel-dots');
+  const carousel   = document.querySelector('.testimonials-carousel');
+  const prevBtn    = document.getElementById('prev-btn');
+  const nextBtn    = document.getElementById('next-btn');
   const dotsContainer = document.getElementById('carousel-dots');
-  if (!track) return;
+  if (!carousel) return;
 
-  const cards = track.querySelectorAll('.testimonial-card');
-  let current = 0, autoPlay;
-  let perSlide = 1;
+  const cards = Array.from(carousel.querySelectorAll('.testimonial-card'));
   const totalSlides = cards.length;
+  let current = 0;
 
   function buildDots() {
     if (!dotsContainer) return;
@@ -81,39 +80,29 @@ window.TwiiNz.Components.initCarousel = function() {
 
   function goTo(index) {
     current = (index + totalSlides) % totalSlides;
-    const offset = current * 100;
-    track.style.transform = `translateX(-${offset}%)`;
+    cards[current].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
     if (dotsContainer) dotsContainer.querySelectorAll('.carousel-dot').forEach((d, i) => d.classList.toggle('active', i === current));
   }
 
-  prevBtn && prevBtn.addEventListener('click', () => { goTo(current - 1); resetAuto(); });
-  nextBtn && nextBtn.addEventListener('click', () => { goTo(current + 1); resetAuto(); });
+  prevBtn && prevBtn.addEventListener('click', () => goTo(current - 1));
+  nextBtn && nextBtn.addEventListener('click', () => goTo(current + 1));
 
-  function resetAuto() { clearInterval(autoPlay); autoPlay = setInterval(() => goTo(current + 1), 5000); }
+  // Observar scroll para actualizar dots
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const idx = cards.indexOf(entry.target);
+        if (idx !== -1 && idx !== current) {
+          current = idx;
+          if (dotsContainer) dotsContainer.querySelectorAll('.carousel-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+        }
+      }
+    });
+  }, { threshold: 0.5 });
 
-  cards.forEach(c => { 
-    c.style.minWidth = 'calc(100% - 2rem)'; 
-    c.style.maxWidth = '400px';
-    c.style.flexShrink = '0'; 
-    c.style.margin = '0 auto';
-  });
-  
-  track.style.justifyContent = 'center';
+  cards.forEach(card => observer.observe(card));
+
   buildDots();
-  autoPlay = setInterval(() => goTo(current + 1), 5000);
-
-  track.parentElement.addEventListener('mouseenter', () => clearInterval(autoPlay));
-  track.parentElement.addEventListener('mouseleave', () => resetAuto());
-
-  let touchStartX = 0;
-  track.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
-  track.addEventListener('touchend', (e) => { const d = touchStartX - e.changedTouches[0].clientX; if (Math.abs(d) > 50) d > 0 ? goTo(current + 1) : goTo(current - 1); resetAuto(); });
-
-  window.addEventListener('resize', () => {
-    perSlide = window.innerWidth <= 900 ? 1 : 2;
-    cards.forEach(c => { c.style.minWidth = `calc(${100 / perSlide}% - ${(perSlide - 1) * 1.5 / perSlide}rem)`; });
-    buildDots(); goTo(0);
-  });
 };
 
 /* ────────────────────────────────────────
